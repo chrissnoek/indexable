@@ -1,0 +1,126 @@
+{
+  "search": {
+    "title": "Search Experts",
+    "subtitle": "Find the right expert for your case",
+    "searchPlaceholder": "Search by name, expertise or location...",
+    "resultsCount": "{count} experts found",
+    "filters": {
+      "title": "Filters",
+      "activeFilters": "Active filters:",
+      "clearAll": "Clear all",
+      "expertise": {
+        "label": "Area of Expertise",
+        "all": "All expertise areas",
+        "medical": "Medical",
+        "construction": "Construction",
+        "financial": "Financial",
+        "forensic": "Forensic",
+        "it": "IT & Technology",
+        "environmental": "Environmental",
+        "labor": "Labor & Employment",
+        "traffic": "Traffic & Transportation",
+        "agricultural": "Agricultural",
+        "realEstate": "Real Estate"
+      },
+      "location": {
+        "label": "Province",
+        "all": "All Netherlands",
+        "groningen": "Groningen",
+        "friesland": "Friesland",
+        "drenthe": "Drenthe",
+        "overijssel": "Overijssel",
+        "gelderland": "Gelderland",
+        "flevoland": "Flevoland",
+        "utrecht": "Utrecht",
+        "noordHolland": "North Holland",
+        "zuidHolland": "South Holland",
+        "zeeland": "Zeeland",
+        "noordBrabant": "North Brabant",
+        "limburg": "Limburg"
+      },
+      "experience": {
+        "label": "Experience",
+        "all": "All experience levels",
+        "junior": "0-5 years",
+        "medior": "5-10 years",
+        "senior": "10-20 years",
+        "expert": "20+ years"
+      },
+      "courtExperience": {
+        "label": "Court Experience",
+        "all": "All levels",
+        "extensive": "Extensive (50+ cases)",
+        "moderate": "Moderate (10-50 cases)",
+        "limited": "Limited (1-10 cases)",
+        "none": "No court experience"
+      },
+      "language": {
+        "label": "Language",
+        "all": "All languages",
+        "dutch": "Dutch",
+        "english": "English",
+        "german": "German",
+        "french": "French",
+        "spanish": "Spanish",
+        "arabic": "Arabic",
+        "turkish": "Turkish",
+        "polish": "Polish"
+      },
+      "rate": {
+        "label": "Hourly Rate",
+        "all": "All rates",
+        "budget": "€100-€200",
+        "standard": "€200-€350",
+        "premium": "€350-€500",
+        "specialist": "€500+"
+      },
+      "registry": {
+        "label": "Registry",
+        "all": "All registries",
+        "lrgd": "LRGD registered",
+        "nrgd": "NRGD registered",
+        "courtAppointed": "Court appointed",
+        "certified": "Certified",
+        "none": "No registration"
+      },
+      "availability": {
+        "label": "Availability",
+        "all": "All availability",
+        "immediate": "Immediately available",
+        "withinWeek": "Within a week",
+        "withinMonth": "Within a month",
+        "limited": "Limited availability"
+      }
+    },
+    "sorting": {
+      "label": "Sort by:",
+      "relevance": "Relevance",
+      "rating": "Rating",
+      "experience": "Experience",
+      "cases": "Number of cases",
+      "priceAsc": "Rate (low-high)",
+      "priceDesc": "Rate (high-low)"
+    },
+    "results": {
+      "searching": "Searching...",
+      "noResults": "No experts found",
+      "noResultsDescription": "Try adjusting your search criteria or using fewer filters.",
+      "clearFilters": "Clear filters",
+      "viewProfile": "View profile",
+      "contact": "Contact",
+      "website": "Visit website",
+      "expertise": "Expertise",
+      "experience": "years experience",
+      "cases": "cases",
+      "languages": "Languages",
+      "rate": "per hour",
+      "available": "Available"
+    },
+    "view": {
+      "label": "View:",
+      "grid": "Grid",
+      "list": "List",
+      "map": "Map"
+    }
+  }
+}

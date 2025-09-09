@@ -1,0 +1,126 @@
+{
+  "search": {
+    "title": "Zoek Deskundigen",
+    "subtitle": "Vind de juiste expert voor uw zaak",
+    "searchPlaceholder": "Zoek op naam, expertise of locatie...",
+    "resultsCount": "{count} deskundigen gevonden",
+    "filters": {
+      "title": "Filters",
+      "activeFilters": "Actieve filters:",
+      "clearAll": "Alles wissen",
+      "expertise": {
+        "label": "Expertisegebied",
+        "all": "Alle expertises",
+        "medical": "Medisch",
+        "construction": "Bouwkundig",
+        "financial": "Financieel",
+        "forensic": "Forensisch",
+        "it": "IT & Technologie",
+        "environmental": "Milieu",
+        "labor": "Arbeidsdeskundig",
+        "traffic": "Verkeer & Vervoer",
+        "agricultural": "Agrarisch",
+        "realEstate": "Vastgoed"
+      },
+      "location": {
+        "label": "Provincie",
+        "all": "Heel Nederland",
+        "groningen": "Groningen",
+        "friesland": "Friesland",
+        "drenthe": "Drenthe",
+        "overijssel": "Overijssel",
+        "gelderland": "Gelderland",
+        "flevoland": "Flevoland",
+        "utrecht": "Utrecht",
+        "noordHolland": "Noord-Holland",
+        "zuidHolland": "Zuid-Holland",
+        "zeeland": "Zeeland",
+        "noordBrabant": "Noord-Brabant",
+        "limburg": "Limburg"
+      },
+      "experience": {
+        "label": "Ervaring",
+        "all": "Alle ervaringsniveaus",
+        "junior": "0-5 jaar",
+        "medior": "5-10 jaar",
+        "senior": "10-20 jaar",
+        "expert": "20+ jaar"
+      },
+      "courtExperience": {
+        "label": "Rechtbankervaring",
+        "all": "Alle niveaus",
+        "extensive": "Uitgebreid (50+ zaken)",
+        "moderate": "Gemiddeld (10-50 zaken)",
+        "limited": "Beperkt (1-10 zaken)",
+        "none": "Geen rechtbankervaring"
+      },
+      "language": {
+        "label": "Taal",
+        "all": "Alle talen",
+        "dutch": "Nederlands",
+        "english": "Engels",
+        "german": "Duits",
+        "french": "Frans",
+        "spanish": "Spaans",
+        "arabic": "Arabisch",
+        "turkish": "Turks",
+        "polish": "Pools"
+      },
+      "rate": {
+        "label": "Uurtarief",
+        "all": "Alle tarieven",
+        "budget": "€100-€200",
+        "standard": "€200-€350",
+        "premium": "€350-€500",
+        "specialist": "€500+"
+      },
+      "registry": {
+        "label": "Registratie",
+        "all": "Alle registraties",
+        "lrgd": "LRGD geregistreerd",
+        "nrgd": "NRGD geregistreerd",
+        "courtAppointed": "Door rechtbank benoemd",
+        "certified": "Gecertificeerd",
+        "none": "Geen registratie"
+      },
+      "availability": {
+        "label": "Beschikbaarheid",
+        "all": "Alle beschikbaarheid",
+        "immediate": "Direct beschikbaar",
+        "withinWeek": "Binnen een week",
+        "withinMonth": "Binnen een maand",
+        "limited": "Beperkt beschikbaar"
+      }
+    },
+    "sorting": {
+      "label": "Sorteer op:",
+      "relevance": "Relevantie",
+      "rating": "Beoordeling",
+      "experience": "Ervaring",
+      "cases": "Aantal zaken",
+      "priceAsc": "Tarief (laag-hoog)",
+      "priceDesc": "Tarief (hoog-laag)"
+    },
+    "results": {
+      "searching": "Zoeken...",
+      "noResults": "Geen deskundigen gevonden",
+      "noResultsDescription": "Probeer uw zoekcriteria aan te passen of minder filters te gebruiken.",
+      "clearFilters": "Filters wissen",
+      "viewProfile": "Profiel bekijken",
+      "contact": "Contact opnemen",
+      "website": "Website bezoeken",
+      "expertise": "Expertise",
+      "experience": "jaar ervaring",
+      "cases": "zaken",
+      "languages": "Talen",
+      "rate": "per uur",
+      "available": "Beschikbaar"
+    },
+    "view": {
+      "label": "Weergave:",
+      "grid": "Raster",
+      "list": "Lijst",
+      "map": "Kaart"
+    }
+  }
+}

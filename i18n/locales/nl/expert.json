@@ -1,0 +1,93 @@
+{
+  "expert": {
+    "notFound": {
+      "title": "Deskundige Niet Gevonden",
+      "message": "De deskundige die u zoekt bestaat niet of is verwijderd.",
+      "backToSearch": "Terug naar Zoeken"
+    },
+    "profile": {
+      "title": "Deskundige Profiel",
+      "verified": "Geverifieerd",
+      "unverified": "Niet geverifieerd",
+      "featured": "Uitgelicht"
+    },
+    "details": {
+      "about": "Over",
+      "expertise": "Expertisegebieden",
+      "mainExpertise": "Hoofdexpertise",
+      "secondaryExpertise": "Secundaire Expertise",
+      "specializations": "Specialisaties",
+      "qualifications": "Kwalificaties",
+      "experience": "Ervaring",
+      "yearsExperience": "Jaar ervaring",
+      "courtCases": "Rechtszaken",
+      "caseTypes": "Type zaken",
+      "references": "Referenties",
+      "languages": "Talen",
+      "primaryLanguage": "Primaire taal",
+      "registry": "Registraties",
+      "registryNumber": "Registratienummer",
+      "location": "Locatie",
+      "workArea": "Werkgebied",
+      "availability": "Beschikbaarheid",
+      "hourlyRate": "Uurtarief",
+      "rateNote": "Tarief toelichting",
+      "bio": "Profiel omschrijving",
+      "contact": "Contactgegevens",
+      "phone": "Telefoon",
+      "email": "E-mail",
+      "website": "Website",
+      "linkedIn": "LinkedIn",
+      "address": "Adres",
+      "member": "Lid sinds"
+    },
+    "stats": {
+      "cases": "Zaken",
+      "experience": "Jaar Ervaring",
+      "rating": "Beoordeling",
+      "responseTime": "Reactietijd",
+      "successRate": "Succespercentage"
+    },
+    "badges": {
+      "lrgd": "LRGD Geregistreerd",
+      "nrgd": "NRGD Geregistreerd",
+      "courtAppointed": "Door Rechtbank Benoemd",
+      "certified": "Gecertificeerd",
+      "verified": "Geverifieerd Profiel",
+      "topRated": "Top Beoordeeld",
+      "experienced": "Ervaren Expert"
+    },
+    "actions": {
+      "contact": "Contact Opnemen",
+      "sendMessage": "Bericht Sturen",
+      "call": "Bellen",
+      "email": "E-mailen",
+      "visitWebsite": "Website Bezoeken",
+      "viewLinkedIn": "LinkedIn Profiel",
+      "downloadCV": "CV Downloaden",
+      "requestQuote": "Offerte Aanvragen",
+      "checkAvailability": "Beschikbaarheid Checken",
+      "bookmark": "Opslaan",
+      "share": "Delen",
+      "report": "Rapporteren",
+      "review": "Beoordeling Schrijven"
+    },
+    "reviews": {
+      "title": "Beoordelingen",
+      "writeReview": "Schrijf een beoordeling",
+      "noReviews": "Nog geen beoordelingen",
+      "beFirst": "Wees de eerste om een beoordeling te schrijven",
+      "verifiedReview": "Geverifieerde beoordeling",
+      "helpful": "Nuttig",
+      "reportReview": "Rapporteer beoordeling"
+    },
+    "similar": {
+      "title": "Vergelijkbare Deskundigen",
+      "viewMore": "Meer bekijken"
+    },
+    "meta": {
+      "title": "{name} - {expertise} Deskundige",
+      "description": "{name} is een {expertise} deskundige met {experience} jaar ervaring in {location}. Gespecialiseerd in {specializations}."
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home",
+      "search": "Search",
+      "submit": "Register",
+      "admin": "Admin",
+      "experts": "Experts",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "actions": {
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "view": "View",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "reset": "Reset",
+      "filter": "Filter",
+      "search": "Search",
+      "download": "Download",
+      "print": "Print",
+      "share": "Share",
+      "contact": "Contact"
+    },
+    "messages": {
+      "confirmDelete": "Are you sure you want to delete this item?",
+      "noResults": "No results found",
+      "loadingData": "Loading data...",
+      "saving": "Saving...",
+      "saved": "Saved successfully",
+      "deleted": "Deleted successfully",
+      "error": "An error occurred",
+      "tryAgain": "Please try again",
+      "required": "This field is required",
+      "invalid": "Invalid input",
+      "success": "Action completed successfully"
+    },
+    "labels": {
+      "name": "Name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "address": "Address",
+      "city": "City",
+      "province": "Province",
+      "country": "Country",
+      "website": "Website",
+      "description": "Description",
+      "expertise": "Area of expertise",
+      "experience": "Experience",
+      "rate": "Hourly rate",
+      "availability": "Availability",
+      "language": "Language",
+      "certification": "Certification"
+    },
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "active": "Active",
+      "inactive": "Inactive",
+      "verified": "Verified",
+      "unverified": "Not verified"
+    },
+    "time": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "week": "Week",
+      "month": "Month",
+      "year": "Year",
+      "hours": "hours",
+      "days": "days",
+      "immediately": "Immediately",
+      "within24h": "Within 24 hours",
+      "within48h": "Within 48 hours"
+    }
+  }
+}

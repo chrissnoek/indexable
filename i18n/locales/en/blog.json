@@ -1,0 +1,52 @@
+{
+  "blog": {
+    "meta": {
+      "title": "Blog - Expert Directory | Legal expertise and tips",
+      "description": "Discover our blog about legal experts, court cases and expertise areas in the Netherlands. Tips, insights and practical information for lawyers and businesses.",
+      "keywords": "expert blog, court case tips, legal expertise, lawyer blog, netherlands",
+      "ogTitle": "Blog - Expert Directory",
+      "ogDescription": "Discover our blog about legal experts, court cases and expertise areas in the Netherlands.",
+      "fallbackDescription": "Expert directory for court cases in the Netherlands",
+      "fallbackKeywords": "expert, court case, netherlands"
+    },
+    "navigation": {
+      "blog": "Blog"
+    },
+    "index": {
+      "title": "Blog",
+      "loading": "Loading blog posts...",
+      "error": "Error:",
+      "noPosts": "No blog posts found.",
+      "readMore": "Read more →"
+    },
+    "post": {
+      "readingTime": "min read",
+      "tableOfContents": "Table of Contents",
+      "relatedArticles": "Related Articles"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "blog": "Blog"
+    },
+    "cta": {
+      "title": "Looking for an expert for your court case?",
+      "description": "Find the right expert in our directory of qualified experts for Dutch court cases.",
+      "button": "Search experts"
+    },
+    "footer": {
+      "title": "Expert Directory",
+      "description": "The platform for finding qualified experts for Dutch court cases.",
+      "quickLinks": "Quick Links",
+      "categories": "Categories",
+      "searchExperts": "Search experts",
+      "register": "Register",
+      "medicalExperts": "Medical experts",
+      "constructionExperts": "Construction experts",
+      "financialSpecialists": "Financial specialists",
+      "copyright": "All rights reserved."
+    },
+    "errors": {
+      "postNotFound": "Blog post not found"
+    }
+  }
+}

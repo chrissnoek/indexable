@@ -1,0 +1,222 @@
+{
+  "categories": [
+    {
+      "id": "medical",
+      "nl": "Medisch",
+      "en": "Medical",
+      "subcategories": [
+        { "id": "psychiatrist", "nl": "Psychiater", "en": "Psychiatrist" },
+        { "id": "neurologist", "nl": "Neuroloog", "en": "Neurologist" },
+        { "id": "orthopedic-surgeon", "nl": "Orthopedisch chirurg", "en": "Orthopedic Surgeon" },
+        { "id": "forensic-physician", "nl": "Forensisch arts", "en": "Forensic Physician" },
+        { "id": "occupational-physician", "nl": "Bedrijfsarts", "en": "Occupational Physician" },
+        { "id": "clinical-psychologist", "nl": "Klinisch psycholoog", "en": "Clinical Psychologist" },
+        { "id": "rehabilitation-specialist", "nl": "Revalidatiearts", "en": "Rehabilitation Specialist" },
+        { "id": "insurance-physician", "nl": "Verzekeringsarts", "en": "Insurance Physician" }
+      ]
+    },
+    {
+      "id": "construction",
+      "nl": "Bouwkundig",
+      "en": "Construction",
+      "subcategories": [
+        { "id": "structural-engineer", "nl": "Constructeur", "en": "Structural Engineer" },
+        { "id": "building-inspector", "nl": "Bouwkundige inspecteur", "en": "Building Inspector" },
+        { "id": "architect", "nl": "Architect", "en": "Architect" },
+        { "id": "construction-damage-expert", "nl": "Bouwschade-expert", "en": "Construction Damage Expert" },
+        { "id": "civil-engineer", "nl": "Civiel ingenieur", "en": "Civil Engineer" },
+        { "id": "installation-engineer", "nl": "Installatietechnisch expert", "en": "Installation Engineer" }
+      ]
+    },
+    {
+      "id": "financial",
+      "nl": "Financieel",
+      "en": "Financial",
+      "subcategories": [
+        { "id": "forensic-accountant", "nl": "Forensisch accountant", "en": "Forensic Accountant" },
+        { "id": "business-valuator", "nl": "Bedrijfswaarderingsdeskundige", "en": "Business Valuator" },
+        { "id": "damage-calculator", "nl": "Schadecalculator", "en": "Damage Calculator" },
+        { "id": "pension-expert", "nl": "Pensioendeskundige", "en": "Pension Expert" },
+        { "id": "tax-specialist", "nl": "Belastingadviseur", "en": "Tax Specialist" },
+        { "id": "bankruptcy-trustee", "nl": "Curator", "en": "Bankruptcy Trustee" }
+      ]
+    },
+    {
+      "id": "forensic",
+      "nl": "Forensisch",
+      "en": "Forensic",
+      "subcategories": [
+        { "id": "handwriting-expert", "nl": "Handschriftdeskundige", "en": "Handwriting Expert" },
+        { "id": "dna-expert", "nl": "DNA-deskundige", "en": "DNA Expert" },
+        { "id": "ballistics-expert", "nl": "Ballistisch expert", "en": "Ballistics Expert" },
+        { "id": "trace-evidence-expert", "nl": "Sporendeskundige", "en": "Trace Evidence Expert" },
+        { "id": "toxicologist", "nl": "Toxicoloog", "en": "Toxicologist" },
+        { "id": "digital-forensics", "nl": "Digitaal forensisch onderzoeker", "en": "Digital Forensics Expert" }
+      ]
+    },
+    {
+      "id": "it-technology",
+      "nl": "IT & Technologie",
+      "en": "IT & Technology",
+      "subcategories": [
+        { "id": "cybersecurity-expert", "nl": "Cybersecurity expert", "en": "Cybersecurity Expert" },
+        { "id": "data-recovery-specialist", "nl": "Data recovery specialist", "en": "Data Recovery Specialist" },
+        { "id": "software-expert", "nl": "Software-expert", "en": "Software Expert" },
+        { "id": "network-specialist", "nl": "Netwerk specialist", "en": "Network Specialist" },
+        { "id": "ip-expert", "nl": "Intellectueel eigendom expert", "en": "Intellectual Property Expert" },
+        { "id": "telecom-expert", "nl": "Telecom expert", "en": "Telecom Expert" }
+      ]
+    },
+    {
+      "id": "environmental",
+      "nl": "Milieu",
+      "en": "Environmental",
+      "subcategories": [
+        { "id": "soil-expert", "nl": "Bodemdeskundige", "en": "Soil Expert" },
+        { "id": "water-quality-expert", "nl": "Waterkwaliteitsdeskundige", "en": "Water Quality Expert" },
+        { "id": "air-quality-expert", "nl": "Luchtkwaliteitsdeskundige", "en": "Air Quality Expert" },
+        { "id": "noise-expert", "nl": "Geluidsdeskundige", "en": "Noise Expert" },
+        { "id": "ecologist", "nl": "Ecoloog", "en": "Ecologist" },
+        { "id": "hazardous-materials-expert", "nl": "Gevaarlijke stoffen expert", "en": "Hazardous Materials Expert" }
+      ]
+    },
+    {
+      "id": "labor",
+      "nl": "Arbeidsdeskundig",
+      "en": "Labor & Employment",
+      "subcategories": [
+        { "id": "occupational-expert", "nl": "Arbeidsdeskundige", "en": "Occupational Expert" },
+        { "id": "reintegration-expert", "nl": "Re-integratie expert", "en": "Reintegration Expert" },
+        { "id": "ergonomist", "nl": "Ergonoom", "en": "Ergonomist" },
+        { "id": "vocational-expert", "nl": "Beroepskeuze-expert", "en": "Vocational Expert" },
+        { "id": "workplace-safety-expert", "nl": "Arbeidsveiligheidsdeskundige", "en": "Workplace Safety Expert" },
+        { "id": "disability-assessment", "nl": "Arbeidsongeschiktheidsdeskundige", "en": "Disability Assessment Expert" }
+      ]
+    },
+    {
+      "id": "traffic",
+      "nl": "Verkeer & Vervoer",
+      "en": "Traffic & Transportation",
+      "subcategories": [
+        { "id": "accident-analyst", "nl": "Ongevalsanalist", "en": "Accident Analyst" },
+        { "id": "traffic-engineer", "nl": "Verkeerskundig ingenieur", "en": "Traffic Engineer" },
+        { "id": "vehicle-expert", "nl": "Voertuigdeskundige", "en": "Vehicle Expert" },
+        { "id": "road-safety-expert", "nl": "Verkeersveiligheidsdeskundige", "en": "Road Safety Expert" },
+        { "id": "logistics-expert", "nl": "Logistiek expert", "en": "Logistics Expert" },
+        { "id": "aviation-expert", "nl": "Luchtvaartdeskundige", "en": "Aviation Expert" }
+      ]
+    },
+    {
+      "id": "agricultural",
+      "nl": "Agrarisch",
+      "en": "Agricultural",
+      "subcategories": [
+        { "id": "agricultural-valuator", "nl": "Agrarisch taxateur", "en": "Agricultural Valuator" },
+        { "id": "veterinarian", "nl": "Dierenarts", "en": "Veterinarian" },
+        { "id": "crop-damage-expert", "nl": "Gewasschade-expert", "en": "Crop Damage Expert" },
+        { "id": "livestock-expert", "nl": "Veehouderij-expert", "en": "Livestock Expert" },
+        { "id": "agricultural-engineer", "nl": "Landbouwkundig ingenieur", "en": "Agricultural Engineer" },
+        { "id": "horticulture-expert", "nl": "Tuinbouw-expert", "en": "Horticulture Expert" }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "nl": "Vastgoed",
+      "en": "Real Estate",
+      "subcategories": [
+        { "id": "property-appraiser", "nl": "Vastgoedtaxateur", "en": "Property Appraiser" },
+        { "id": "rental-expert", "nl": "Huurprijsdeskundige", "en": "Rental Expert" },
+        { "id": "property-manager", "nl": "Vastgoedbeheerder", "en": "Property Manager" },
+        { "id": "real-estate-lawyer", "nl": "Vastgoedjurist", "en": "Real Estate Lawyer" },
+        { "id": "zoning-expert", "nl": "Bestemmingsplanexpert", "en": "Zoning Expert" },
+        { "id": "property-damage-expert", "nl": "Vastgoedschade-expert", "en": "Property Damage Expert" }
+      ]
+    }
+  ],
+  "filters": {
+    "location": {
+      "nl": "Locatie",
+      "en": "Location",
+      "options": [
+        { "id": "nationwide", "nl": "Landelijk", "en": "Nationwide" },
+        { "id": "groningen", "nl": "Groningen", "en": "Groningen" },
+        { "id": "friesland", "nl": "Friesland", "en": "Friesland" },
+        { "id": "drenthe", "nl": "Drenthe", "en": "Drenthe" },
+        { "id": "overijssel", "nl": "Overijssel", "en": "Overijssel" },
+        { "id": "gelderland", "nl": "Gelderland", "en": "Gelderland" },
+        { "id": "flevoland", "nl": "Flevoland", "en": "Flevoland" },
+        { "id": "utrecht", "nl": "Utrecht", "en": "Utrecht" },
+        { "id": "noord-holland", "nl": "Noord-Holland", "en": "North Holland" },
+        { "id": "zuid-holland", "nl": "Zuid-Holland", "en": "South Holland" },
+        { "id": "zeeland", "nl": "Zeeland", "en": "Zeeland" },
+        { "id": "noord-brabant", "nl": "Noord-Brabant", "en": "North Brabant" },
+        { "id": "limburg", "nl": "Limburg", "en": "Limburg" }
+      ]
+    },
+    "experience": {
+      "nl": "Ervaring",
+      "en": "Experience",
+      "options": [
+        { "id": "0-5", "nl": "0-5 jaar", "en": "0-5 years" },
+        { "id": "5-10", "nl": "5-10 jaar", "en": "5-10 years" },
+        { "id": "10-20", "nl": "10-20 jaar", "en": "10-20 years" },
+        { "id": "20+", "nl": "20+ jaar", "en": "20+ years" }
+      ]
+    },
+    "court_experience": {
+      "nl": "Rechtbankervaring",
+      "en": "Court Experience",
+      "options": [
+        { "id": "extensive", "nl": "Uitgebreid (50+ zaken)", "en": "Extensive (50+ cases)" },
+        { "id": "moderate", "nl": "Gemiddeld (10-50 zaken)", "en": "Moderate (10-50 cases)" },
+        { "id": "limited", "nl": "Beperkt (1-10 zaken)", "en": "Limited (1-10 cases)" },
+        { "id": "none", "nl": "Geen rechtbankervaring", "en": "No court experience" }
+      ]
+    },
+    "language": {
+      "nl": "Taal",
+      "en": "Language",
+      "options": [
+        { "id": "dutch", "nl": "Nederlands", "en": "Dutch" },
+        { "id": "english", "nl": "Engels", "en": "English" },
+        { "id": "german", "nl": "Duits", "en": "German" },
+        { "id": "french", "nl": "Frans", "en": "French" },
+        { "id": "spanish", "nl": "Spaans", "en": "Spanish" },
+        { "id": "arabic", "nl": "Arabisch", "en": "Arabic" },
+        { "id": "turkish", "nl": "Turks", "en": "Turkish" },
+        { "id": "polish", "nl": "Pools", "en": "Polish" }
+      ]
+    },
+    "rate_indication": {
+      "nl": "Tariefindicatie",
+      "en": "Rate Indication",
+      "options": [
+        { "id": "budget", "nl": "€100-€200 per uur", "en": "€100-€200 per hour" },
+        { "id": "standard", "nl": "€200-€350 per uur", "en": "€200-€350 per hour" },
+        { "id": "premium", "nl": "€350-€500 per uur", "en": "€350-€500 per hour" },
+        { "id": "specialist", "nl": "€500+ per uur", "en": "€500+ per hour" }
+      ]
+    },
+    "registry": {
+      "nl": "Register",
+      "en": "Registry",
+      "options": [
+        { "id": "lrgd", "nl": "LRGD geregistreerd", "en": "LRGD registered" },
+        { "id": "nrgd", "nl": "NRGD geregistreerd", "en": "NRGD registered" },
+        { "id": "court-appointed", "nl": "Door rechtbank benoemd", "en": "Court appointed" },
+        { "id": "certified", "nl": "Gecertificeerd", "en": "Certified" },
+        { "id": "none", "nl": "Geen registratie", "en": "No registration" }
+      ]
+    },
+    "availability": {
+      "nl": "Beschikbaarheid",
+      "en": "Availability",
+      "options": [
+        { "id": "immediate", "nl": "Direct beschikbaar", "en": "Immediately available" },
+        { "id": "within-week", "nl": "Binnen een week", "en": "Within a week" },
+        { "id": "within-month", "nl": "Binnen een maand", "en": "Within a month" },
+        { "id": "limited", "nl": "Beperkt beschikbaar", "en": "Limited availability" }
+      ]
+    }
+  }
+}

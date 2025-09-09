@@ -1,0 +1,85 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home",
+      "search": "Zoeken",
+      "submit": "Registreren",
+      "admin": "Admin",
+      "experts": "Deskundigen",
+      "about": "Over ons",
+      "contact": "Contact"
+    },
+    "actions": {
+      "loading": "Laden...",
+      "error": "Fout",
+      "success": "Succes",
+      "cancel": "Annuleren",
+      "save": "Opslaan",
+      "delete": "Verwijderen",
+      "edit": "Bewerken",
+      "view": "Bekijken",
+      "back": "Terug",
+      "next": "Volgende",
+      "previous": "Vorige",
+      "submit": "Verzenden",
+      "reset": "Reset",
+      "filter": "Filteren",
+      "search": "Zoeken",
+      "download": "Downloaden",
+      "print": "Printen",
+      "share": "Delen",
+      "contact": "Contact opnemen"
+    },
+    "messages": {
+      "confirmDelete": "Weet u zeker dat u dit item wilt verwijderen?",
+      "noResults": "Geen resultaten gevonden",
+      "loadingData": "Gegevens laden...",
+      "saving": "Opslaan...",
+      "saved": "Succesvol opgeslagen",
+      "deleted": "Succesvol verwijderd",
+      "error": "Er is een fout opgetreden",
+      "tryAgain": "Probeer het opnieuw",
+      "required": "Dit veld is verplicht",
+      "invalid": "Ongeldige invoer",
+      "success": "Actie succesvol uitgevoerd"
+    },
+    "labels": {
+      "name": "Naam",
+      "email": "E-mailadres",
+      "phone": "Telefoonnummer",
+      "address": "Adres",
+      "city": "Plaats",
+      "province": "Provincie",
+      "country": "Land",
+      "website": "Website",
+      "description": "Omschrijving",
+      "expertise": "Expertisegebied",
+      "experience": "Ervaring",
+      "rate": "Uurtarief",
+      "availability": "Beschikbaarheid",
+      "language": "Taal",
+      "certification": "Certificering"
+    },
+    "status": {
+      "pending": "In behandeling",
+      "approved": "Goedgekeurd",
+      "rejected": "Afgewezen",
+      "active": "Actief",
+      "inactive": "Inactief",
+      "verified": "Geverifieerd",
+      "unverified": "Niet geverifieerd"
+    },
+    "time": {
+      "today": "Vandaag",
+      "yesterday": "Gisteren",
+      "week": "Week",
+      "month": "Maand",
+      "year": "Jaar",
+      "hours": "uur",
+      "days": "dagen",
+      "immediately": "Direct",
+      "within24h": "Binnen 24 uur",
+      "within48h": "Binnen 48 uur"
+    }
+  }
+}

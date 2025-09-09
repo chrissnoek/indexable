@@ -1,0 +1,128 @@
+{
+  "admin": {
+    "title": "Deskundigen Directory - Admin",
+    "subtitle": "Beheer deskundigen en aanmeldingen",
+    "backToSite": "Terug naar Site",
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welkom terug"
+    },
+    "stats": {
+      "totalExperts": "Totaal Deskundigen",
+      "verified": "Geverifieerd",
+      "approved": "Goedgekeurd",
+      "pendingReview": "In Behandeling",
+      "rejected": "Afgewezen",
+      "active": "Actief",
+      "inactive": "Inactief",
+      "newToday": "Vandaag Nieuw",
+      "newThisWeek": "Deze Week",
+      "totalViews": "Totaal Bekeken",
+      "totalContacts": "Totaal Contactverzoeken"
+    },
+    "experts": {
+      "title": "Deskundigen",
+      "subtitle": "Beheer alle deskundigen profielen",
+      "search": "Zoek deskundigen...",
+      "filter": "Filter op status",
+      "filterExpertise": "Filter op expertise",
+      "all": "Alle",
+      "verified": "Geverifieerd",
+      "unverified": "Niet geverifieerd",
+      "active": "Actief",
+      "inactive": "Inactief",
+      "pending": "In Behandeling",
+      "approved": "Goedgekeurd",
+      "rejected": "Afgewezen",
+      "featured": "Uitgelicht",
+      "actions": "Acties"
+    },
+    "table": {
+      "expert": "Deskundige",
+      "name": "Naam",
+      "expertise": "Expertise",
+      "location": "Locatie",
+      "contact": "Contact",
+      "experience": "Ervaring",
+      "cases": "Zaken",
+      "rate": "Tarief",
+      "registry": "Registratie",
+      "status": "Status",
+      "submitted": "Ingediend",
+      "lastActive": "Laatst Actief",
+      "rating": "Beoordeling",
+      "actions": "Acties"
+    },
+    "submissions": {
+      "title": "Nieuwe Aanmeldingen",
+      "subtitle": "Beoordeel nieuwe deskundigen aanmeldingen",
+      "review": "Beoordeel Aanmelding",
+      "approve": "Goedkeuren",
+      "reject": "Afwijzen",
+      "requestInfo": "Meer Info Vragen",
+      "noPending": "Geen aanmeldingen in behandeling",
+      "details": "Details Bekijken",
+      "documents": "Documenten",
+      "verification": "Verificatie"
+    },
+    "actions": {
+      "edit": "Profiel Bewerken",
+      "delete": "Profiel Verwijderen",
+      "activate": "Activeren",
+      "deactivate": "Deactiveren",
+      "verify": "Verifiëren",
+      "unverify": "Verificatie Intrekken",
+      "feature": "Uitlichten",
+      "unfeature": "Uitlichting Verwijderen",
+      "view": "Bekijken",
+      "viewProfile": "Profiel Bekijken",
+      "approve": "Goedkeuren",
+      "reject": "Afwijzen",
+      "suspend": "Schorsen",
+      "restore": "Herstellen",
+      "sendMessage": "Bericht Sturen",
+      "viewDocuments": "Documenten Bekijken",
+      "exportData": "Data Exporteren"
+    },
+    "filters": {
+      "dateRange": "Periode",
+      "lastWeek": "Afgelopen Week",
+      "lastMonth": "Afgelopen Maand",
+      "last3Months": "Afgelopen 3 Maanden",
+      "lastYear": "Afgelopen Jaar",
+      "custom": "Aangepast"
+    },
+    "emptyState": {
+      "noExperts": "Geen deskundigen gevonden",
+      "tryAdjusting": "Probeer je zoekopdracht of filters aan te passen.",
+      "noSubmissions": "Geen nieuwe aanmeldingen",
+      "checkBack": "Kom later terug voor nieuwe aanmeldingen."
+    },
+    "confirmations": {
+      "delete": "Weet u zeker dat u dit profiel wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "approve": "Weet u zeker dat u deze aanmelding wilt goedkeuren?",
+      "reject": "Weet u zeker dat u deze aanmelding wilt afwijzen?",
+      "suspend": "Weet u zeker dat u dit profiel wilt schorsen?",
+      "verify": "Weet u zeker dat u dit profiel wilt verifiëren?"
+    },
+    "messages": {
+      "updateSuccess": "Profiel succesvol bijgewerkt",
+      "updateFailed": "Kon profiel niet bijwerken. Probeer het opnieuw.",
+      "deleteSuccess": "Profiel succesvol verwijderd",
+      "deleteFailed": "Kon profiel niet verwijderen. Probeer het opnieuw.",
+      "approveSuccess": "Aanmelding goedgekeurd",
+      "rejectSuccess": "Aanmelding afgewezen",
+      "verifySuccess": "Profiel geverifieerd",
+      "suspendSuccess": "Profiel geschorst",
+      "restoreSuccess": "Profiel hersteld"
+    },
+    "settings": {
+      "title": "Instellingen",
+      "general": "Algemeen",
+      "notifications": "Meldingen",
+      "emailTemplates": "E-mail Templates",
+      "fees": "Tarieven & Kosten",
+      "categories": "Categorieën Beheren"
+    }
+  }
+}

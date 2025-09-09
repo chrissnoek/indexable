@@ -1,0 +1,128 @@
+{
+  "admin": {
+    "title": "Experts Directory - Admin",
+    "subtitle": "Manage experts and applications",
+    "backToSite": "Back to Site",
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welcome back"
+    },
+    "stats": {
+      "totalExperts": "Total Experts",
+      "verified": "Verified",
+      "approved": "Approved",
+      "pendingReview": "Pending Review",
+      "rejected": "Rejected",
+      "active": "Active",
+      "inactive": "Inactive",
+      "newToday": "New Today",
+      "newThisWeek": "This Week",
+      "totalViews": "Total Views",
+      "totalContacts": "Total Contact Requests"
+    },
+    "experts": {
+      "title": "Experts",
+      "subtitle": "Manage all expert profiles",
+      "search": "Search experts...",
+      "filter": "Filter by status",
+      "filterExpertise": "Filter by expertise",
+      "all": "All",
+      "verified": "Verified",
+      "unverified": "Not verified",
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "featured": "Featured",
+      "actions": "Actions"
+    },
+    "table": {
+      "expert": "Expert",
+      "name": "Name",
+      "expertise": "Expertise",
+      "location": "Location",
+      "contact": "Contact",
+      "experience": "Experience",
+      "cases": "Cases",
+      "rate": "Rate",
+      "registry": "Registry",
+      "status": "Status",
+      "submitted": "Submitted",
+      "lastActive": "Last Active",
+      "rating": "Rating",
+      "actions": "Actions"
+    },
+    "submissions": {
+      "title": "New Applications",
+      "subtitle": "Review new expert applications",
+      "review": "Review Application",
+      "approve": "Approve",
+      "reject": "Reject",
+      "requestInfo": "Request More Info",
+      "noPending": "No pending applications",
+      "details": "View Details",
+      "documents": "Documents",
+      "verification": "Verification"
+    },
+    "actions": {
+      "edit": "Edit Profile",
+      "delete": "Delete Profile",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "verify": "Verify",
+      "unverify": "Revoke Verification",
+      "feature": "Feature",
+      "unfeature": "Remove Feature",
+      "view": "View",
+      "viewProfile": "View Profile",
+      "approve": "Approve",
+      "reject": "Reject",
+      "suspend": "Suspend",
+      "restore": "Restore",
+      "sendMessage": "Send Message",
+      "viewDocuments": "View Documents",
+      "exportData": "Export Data"
+    },
+    "filters": {
+      "dateRange": "Date Range",
+      "lastWeek": "Last Week",
+      "lastMonth": "Last Month",
+      "last3Months": "Last 3 Months",
+      "lastYear": "Last Year",
+      "custom": "Custom"
+    },
+    "emptyState": {
+      "noExperts": "No experts found",
+      "tryAdjusting": "Try adjusting your search or filter criteria.",
+      "noSubmissions": "No new applications",
+      "checkBack": "Check back later for new applications."
+    },
+    "confirmations": {
+      "delete": "Are you sure you want to delete this profile? This action cannot be undone.",
+      "approve": "Are you sure you want to approve this application?",
+      "reject": "Are you sure you want to reject this application?",
+      "suspend": "Are you sure you want to suspend this profile?",
+      "verify": "Are you sure you want to verify this profile?"
+    },
+    "messages": {
+      "updateSuccess": "Profile updated successfully",
+      "updateFailed": "Failed to update profile. Please try again.",
+      "deleteSuccess": "Profile deleted successfully",
+      "deleteFailed": "Failed to delete profile. Please try again.",
+      "approveSuccess": "Application approved",
+      "rejectSuccess": "Application rejected",
+      "verifySuccess": "Profile verified",
+      "suspendSuccess": "Profile suspended",
+      "restoreSuccess": "Profile restored"
+    },
+    "settings": {
+      "title": "Settings",
+      "general": "General",
+      "notifications": "Notifications",
+      "emailTemplates": "Email Templates",
+      "fees": "Rates & Fees",
+      "categories": "Manage Categories"
+    }
+  }
+}

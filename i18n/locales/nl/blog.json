@@ -1,0 +1,52 @@
+{
+  "blog": {
+    "meta": {
+      "title": "Blog - Deskundigen Directory | Juridische expertise en tips",
+      "description": "Ontdek onze blog over juridische deskundigen, rechtszaken en expertisegebieden in Nederland. Tips, inzichten en praktische informatie voor advocaten en bedrijven.",
+      "keywords": "deskundige blog, rechtszaak tips, juridische expertise, advocaat blog, nederland",
+      "ogTitle": "Blog - Deskundigen Directory",
+      "ogDescription": "Ontdek onze blog over juridische deskundigen, rechtszaken en expertisegebieden in Nederland.",
+      "fallbackDescription": "Deskundigen directory voor rechtszaken in Nederland",
+      "fallbackKeywords": "deskundige, rechtszaak, nederland"
+    },
+    "navigation": {
+      "blog": "Blog"
+    },
+    "index": {
+      "title": "Blog",
+      "loading": "Blog posts laden...",
+      "error": "Error:",
+      "noPosts": "Geen blog posts gevonden.",
+      "readMore": "Lees meer →"
+    },
+    "post": {
+      "readingTime": "min leestijd",
+      "tableOfContents": "Inhoudsopgave",
+      "relatedArticles": "Gerelateerde artikelen"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "blog": "Blog"
+    },
+    "cta": {
+      "title": "Zoekt u een deskundige voor uw rechtszaak?",
+      "description": "Vind de juiste expert in onze directory van gekwalificeerde deskundigen voor Nederlandse rechtszaken.",
+      "button": "Zoek deskundigen"
+    },
+    "footer": {
+      "title": "Deskundigen Directory",
+      "description": "Het platform voor het vinden van gekwalificeerde deskundigen voor Nederlandse rechtszaken.",
+      "quickLinks": "Quick Links",
+      "categories": "Categorieën",
+      "searchExperts": "Zoek deskundigen",
+      "register": "Registreren",
+      "medicalExperts": "Medische deskundigen",
+      "constructionExperts": "Bouwkundige experts",
+      "financialSpecialists": "Financiële specialisten",
+      "copyright": "Alle rechten voorbehouden."
+    },
+    "errors": {
+      "postNotFound": "Blog post niet gevonden"
+    }
+  }
+}

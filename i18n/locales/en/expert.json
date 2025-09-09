@@ -1,0 +1,93 @@
+{
+  "expert": {
+    "notFound": {
+      "title": "Expert Not Found",
+      "message": "The expert you are looking for does not exist or has been removed.",
+      "backToSearch": "Back to Search"
+    },
+    "profile": {
+      "title": "Expert Profile",
+      "verified": "Verified",
+      "unverified": "Not verified",
+      "featured": "Featured"
+    },
+    "details": {
+      "about": "About",
+      "expertise": "Areas of Expertise",
+      "mainExpertise": "Main Expertise",
+      "secondaryExpertise": "Secondary Expertise",
+      "specializations": "Specializations",
+      "qualifications": "Qualifications",
+      "experience": "Experience",
+      "yearsExperience": "Years of experience",
+      "courtCases": "Court cases",
+      "caseTypes": "Case types",
+      "references": "References",
+      "languages": "Languages",
+      "primaryLanguage": "Primary language",
+      "registry": "Registrations",
+      "registryNumber": "Registration number",
+      "location": "Location",
+      "workArea": "Work area",
+      "availability": "Availability",
+      "hourlyRate": "Hourly rate",
+      "rateNote": "Rate note",
+      "bio": "Profile description",
+      "contact": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Website",
+      "linkedIn": "LinkedIn",
+      "address": "Address",
+      "member": "Member since"
+    },
+    "stats": {
+      "cases": "Cases",
+      "experience": "Years Experience",
+      "rating": "Rating",
+      "responseTime": "Response Time",
+      "successRate": "Success Rate"
+    },
+    "badges": {
+      "lrgd": "LRGD Registered",
+      "nrgd": "NRGD Registered",
+      "courtAppointed": "Court Appointed",
+      "certified": "Certified",
+      "verified": "Verified Profile",
+      "topRated": "Top Rated",
+      "experienced": "Experienced Expert"
+    },
+    "actions": {
+      "contact": "Get in Touch",
+      "sendMessage": "Send Message",
+      "call": "Call",
+      "email": "Email",
+      "visitWebsite": "Visit Website",
+      "viewLinkedIn": "LinkedIn Profile",
+      "downloadCV": "Download CV",
+      "requestQuote": "Request Quote",
+      "checkAvailability": "Check Availability",
+      "bookmark": "Save",
+      "share": "Share",
+      "report": "Report",
+      "review": "Write Review"
+    },
+    "reviews": {
+      "title": "Reviews",
+      "writeReview": "Write a review",
+      "noReviews": "No reviews yet",
+      "beFirst": "Be the first to write a review",
+      "verifiedReview": "Verified review",
+      "helpful": "Helpful",
+      "reportReview": "Report review"
+    },
+    "similar": {
+      "title": "Similar Experts",
+      "viewMore": "View more"
+    },
+    "meta": {
+      "title": "{name} - {expertise} Expert",
+      "description": "{name} is a {expertise} expert with {experience} years of experience in {location}. Specialized in {specializations}."
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+    "home": {
+        "navigation": {
+            "home": "Home",
+            "search": "Search",
+            "submit": "Register",
+            "admin": "Admin",
+            "experts": "Experts",
+            "about": "About",
+            "contact": "Contact",
+            "blog": "Blog"
+        },
+        "hero": {
+            "title": "Find the right expert for your legal case",
+            "subtitle": "Reliable court experts for objective and independent advice",
+            "description": "Search our network of certified experts throughout the Netherlands. From medical expertise to construction reports.",
+            "trustedBy": "Trusted by 500+ law firms",
+            "searchPlaceholder": "Search by expertise or location...",
+            "searchButton": "Search"
+        },
+        "stats": {
+            "verifiedExperts": "Verified Experts",
+            "successfulCases": "Successful Cases",
+            "averageRating": "Average Rating",
+            "yearsExperience": "Years Experience Total"
+        },
+        "categories": {
+            "title": "Areas of Expertise",
+            "subtitle": "Find the right specialist for your case",
+            "viewAll": "View all categories",
+            "medical": "Medical",
+            "construction": "Construction",
+            "financial": "Financial",
+            "forensic": "Forensic",
+            "it": "IT & Technology",
+            "environmental": "Environmental",
+            "labor": "Labor & Employment",
+            "traffic": "Traffic & Transportation",
+            "agricultural": "Agricultural",
+            "realEstate": "Real Estate"
+        },
+        "featured": {
+            "title": "Featured Experts",
+            "subtitle": "Top-rated experts with extensive court experience",
+            "loading": "Loading experts...",
+            "noExperts": "No experts available yet",
+            "noExpertsDescription": "More experts coming soon to our directory",
+            "viewProfile": "View profile",
+            "courtCases": "court cases",
+            "yearsExp": "years experience",
+            "languages": "Languages",
+            "availability": "Availability",
+            "rating": "Rating"
+        },
+        "howItWorks": {
+            "title": "How it works",
+            "subtitle": "Three simple steps to find the right expert",
+            "step1": {
+                "title": "Search",
+                "description": "Search by expertise, location or specific qualifications"
+            },
+            "step2": {
+                "title": "Compare",
+                "description": "View profiles, experience and rates of experts"
+            },
+            "step3": {
+                "title": "Contact",
+                "description": "Get in touch directly for your case"
+            }
+        },
+        "cta": {
+            "title": "Are you an expert?",
+            "subtitle": "Join our network and expand your reach",
+            "button": "Register as expert",
+            "benefits": {
+                "visibility": "More visibility with lawyers and courts",
+                "cases": "Access to relevant cases",
+                "network": "Expand professional network"
+            }
+        },
+        "footer": {
+            "about": "About Us",
+            "aboutText": "The most comprehensive platform for court experts in the Netherlands. We connect legal professionals with certified experts.",
+            "quickLinks": "Quick Links",
+            "blog": "Legal Expertise Blog",
+            "forExperts": "For Experts",
+            "forLawyers": "For Lawyers",
+            "categories": "Areas of Expertise",
+            "blogPosts": "Blog Articles",
+            "contact": "Contact",
+            "contactInfo": "Contact Information"
+        },
+        "email": "info{'@'}experts-directory.nl",
+        "phone": "+31 20 123 4567",
+        "address": "Amsterdam, Netherlands",
+        "copyright": "© 2024 Experts Directory. All rights reserved.",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "cookiePolicy": "Cookie Policy"
+    }
+}

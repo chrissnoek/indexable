@@ -1,0 +1,101 @@
+{
+    "home": {
+        "navigation": {
+            "home": "Home",
+            "search": "Zoeken",
+            "submit": "Registreren",
+            "admin": "Admin",
+            "experts": "Deskundigen",
+            "about": "Over ons",
+            "contact": "Contact",
+            "blog": "Blog"
+        },
+        "hero": {
+            "title": "Vind de juiste deskundige voor uw rechtszaak",
+            "subtitle": "Betrouwbare gerechtelijk deskundigen voor objectief en onafhankelijk advies",
+            "description": "Doorzoek ons netwerk van gecertificeerde deskundigen in heel Nederland. Van medische expertises tot bouwkundige rapporten.",
+            "trustedBy": "Vertrouwd door 500+ advocatenkantoren",
+            "searchPlaceholder": "Zoek op expertise of locatie...",
+            "searchButton": "Zoeken"
+        },
+        "stats": {
+            "verifiedExperts": "Geverifieerde Deskundigen",
+            "successfulCases": "Succesvolle Zaken",
+            "averageRating": "Gemiddelde Beoordeling",
+            "yearsExperience": "Jaar Ervaring Totaal"
+        },
+        "categories": {
+            "title": "Expertisegebieden",
+            "subtitle": "Vind de juiste specialist voor uw zaak",
+            "viewAll": "Alle categorieën bekijken",
+            "medical": "Medisch",
+            "construction": "Bouwkundig",
+            "financial": "Financieel",
+            "forensic": "Forensisch",
+            "it": "IT & Technologie",
+            "environmental": "Milieu",
+            "labor": "Arbeidsdeskundig",
+            "traffic": "Verkeer & Vervoer",
+            "agricultural": "Agrarisch",
+            "realEstate": "Vastgoed"
+        },
+        "featured": {
+            "title": "Uitgelichte Deskundigen",
+            "subtitle": "Top-rated experts met uitgebreide rechtbankervaring",
+            "loading": "Deskundigen laden...",
+            "noExperts": "Nog geen deskundigen beschikbaar",
+            "noExpertsDescription": "Binnenkort meer deskundigen in onze directory",
+            "viewProfile": "Profiel bekijken",
+            "courtCases": "rechtszaken",
+            "yearsExp": "jaar ervaring",
+            "languages": "Talen",
+            "availability": "Beschikbaarheid",
+            "rating": "Beoordeling"
+        },
+        "howItWorks": {
+            "title": "Hoe het werkt",
+            "subtitle": "In drie eenvoudige stappen naar de juiste deskundige",
+            "step1": {
+                "title": "Zoek",
+                "description": "Zoek op expertise, locatie of specifieke kwalificaties"
+            },
+            "step2": {
+                "title": "Vergelijk",
+                "description": "Bekijk profielen, ervaring en tarieven van deskundigen"
+            },
+            "step3": {
+                "title": "Contact",
+                "description": "Neem direct contact op voor uw zaak"
+            }
+        },
+        "cta": {
+            "title": "Bent u een deskundige?",
+            "subtitle": "Word onderdeel van ons netwerk en vergroot uw bereik",
+            "button": "Registreer als deskundige",
+            "benefits": {
+                "visibility": "Meer zichtbaarheid bij advocaten en rechtbanken",
+                "cases": "Toegang tot relevante zaken",
+                "network": "Professioneel netwerk uitbreiden"
+            }
+        },
+        "footer": {
+            "about": "Over Ons",
+            "aboutText": "Het meest complete platform voor gerechtelijk deskundigen in Nederland. Wij verbinden juridische professionals met gecertificeerde experts.",
+            "quickLinks": "Snelle Links",
+            "blog": "Juridische Expertise Blog",
+            "forExperts": "Voor Deskundigen",
+            "forLawyers": "Voor Advocaten",
+            "categories": "Expertisegebieden",
+            "blogPosts": "Blog Artikelen",
+            "contact": "Contact",
+            "contactInfo": "Contactgegevens"
+        },
+        "email": "info{'@'}deskundigen-directory.nl",
+        "phone": "+31 20 123 4567",
+        "address": "Amsterdam, Nederland",
+        "copyright": "© 2024 Deskundigen Directory. Alle rechten voorbehouden.",
+        "privacyPolicy": "Privacybeleid",
+        "termsOfService": "Algemene Voorwaarden",
+        "cookiePolicy": "Cookiebeleid"
+    }
+}
