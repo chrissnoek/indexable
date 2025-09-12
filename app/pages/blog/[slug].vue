@@ -165,6 +165,14 @@
                             >
                                 {{ data.description }}
                             </p>
+
+                            <img
+                                v-if="showImage"
+                                :src="imageSrc"
+                                :alt="data?.title"
+                                class="mt-8 w-full max-w-2xl mx-auto rounded-lg shadow-lg max-h-[290px] object-cover"
+                                @error="showImage = false"
+                            />
                         </div>
                     </header>
 
@@ -324,6 +332,14 @@
 const { params, query, path } = useRoute();
 
 console.log(params, query, path);
+
+// Data for image visibility
+const showImage = ref(true);
+
+// Get image source from frontmatter or fallback to slug-based
+const imageSrc = computed(() => {
+    return data.value?.coverImage || `/blog-images/${params.slug}.png`;
+});
 // Fetch the blog post content from content/blog directory
 const { data } = await useAsyncData(() =>
     queryCollection('content').path(`/blog/${params.slug}`).first()

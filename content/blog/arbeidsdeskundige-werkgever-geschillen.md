@@ -2,6 +2,7 @@
 title: 'Arbeidsdeskundige inschakelen: Complete gids voor werkgevers en werknemers'
 description: 'Ontdek wanneer en waarom u een arbeidsdeskundige moet inschakelen. Van re-integratie en ontslag tot arbeidsconflicten: praktische tips, kosten en juridische kaders.'
 date: '2025-09-07'
+coverImage: '/blog-images/arbeidsdeskundige-werkgever-geschillen.png'
 tags:
     [
         'arbeidsdeskundige',

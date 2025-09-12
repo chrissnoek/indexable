@@ -191,9 +191,9 @@ interface ConsentPreferences {
 
 const showBanner = ref(false);
 const preferences = reactive<ConsentPreferences>({
-    analytics: true,
-    marketing: true,
-    personalization: true,
+    analytics: false,
+    marketing: false,
+    personalization: false,
 });
 
 // Get the Google Tag Manager script instance
@@ -224,11 +224,11 @@ function checkConsentStatus() {
     
     if (!saved) {
         console.log('No consent saved, showing banner');
-        // Set default consent mode (everything granted initially except essential)
+        // Set default consent mode (everything denied initially)
         updateConsentMode({
-            analytics: true,
-            marketing: true,
-            personalization: true,
+            analytics: false,
+            marketing: false,
+            personalization: false,
         });
         showBanner.value = true;
         return;

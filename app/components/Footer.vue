@@ -1,5 +1,6 @@
 <template>
     <div>
+        <ConsentBanner />
         <footer class="bg-cyan-900 text-white py-16 relative overflow-hidden">
         <div
             class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
@@ -168,5 +169,7 @@
 </template>
 
 <script setup lang="ts">
+import ConsentBanner from './ConsentBanner.vue';
+
 // Footer component - no props needed as it's consistent across pages
 </script>

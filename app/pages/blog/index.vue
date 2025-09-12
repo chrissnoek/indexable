@@ -63,6 +63,12 @@
                         :key="post._path"
                         class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                     >
+                        <img
+                            :src="post.coverImage || `/blog-images/${post.path.split('/').pop()}.png`"
+                            :alt="post.title"
+                            class="w-full h-48 object-cover"
+                            @error="$event.target.style.display='none'"
+                        />
                         <div class="p-6">
                             <time
                                 :datetime="post.date"
