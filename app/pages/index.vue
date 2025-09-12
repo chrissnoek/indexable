@@ -46,12 +46,13 @@
                                 @keyup.enter="performSearch"
                             />
                         </div>
-                        <button
+                        <Button
+                            :variant="ButtonVariant.Primary"
+                            :size="ButtonSize.LG"
                             @click="performSearch"
-                            class="bg-cyan-900 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-900 hover:to-cyan-600 transition-all transform hover:-translate-y-0.5"
                         >
                             {{ $t('home.hero.searchButton') }}
-                        </button>
+                        </Button>
                     </div>
                 </div>
 
@@ -109,11 +110,11 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-                    <button
+                    <div
                         v-for="category in categories"
                         :key="category.id"
                         @click="filterByCategory(category.id)"
-                        class="group p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl hover:from-cyan-50 hover:to-cyan-50 border-2 border-gray-100 hover:border-cyan-200 transition-all duration-300 text-center hover transform hover:-translate-y-1"
+                        class="group p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl hover:from-cyan-50 hover:to-cyan-50 border-2 border-gray-100 hover:border-cyan-200 transition-all duration-300 text-center hover transform hover:-translate-y-1 cursor-pointer"
                     >
                         <div
                             class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300"
@@ -130,7 +131,7 @@
                         >
                             {{ $t('home.categories.viewAll') }}
                         </div>
-                    </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,12 +168,13 @@
                     <p class="text-gray-600 mb-6">
                         {{ $t('home.featured.noExpertsDescription') }}
                     </p>
-                    <NuxtLink
-                        to="/submit"
-                        class="inline-block bg-cyan-900 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-900 hover:to-cyan-600 transition-all transform hover:-translate-y-0.5"
+                    <Button
+                        :variant="ButtonVariant.Primary"
+                        :size="ButtonSize.LG"
+                        @click="navigateTo('/submit')"
                     >
                         {{ $t('home.cta.button') }}
-                    </NuxtLink>
+                    </Button>
                 </div>
                 <div
                     v-else
@@ -242,6 +244,7 @@
 import type { Company } from '~/types/company';
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
+import { Button, ButtonVariant, ButtonSize } from '~/components/ui/Button';
 
 const searchQuery = ref('');
 const loading = ref(true);

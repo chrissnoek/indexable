@@ -42,21 +42,28 @@
                 <nav
                     class="hidden md:flex space-x-8 justify-center items-center"
                 >
-                    <NuxtLink
-                        v-for="item in navigationItems"
-                        :key="item.key"
-                        :to="item.to"
-                        :class="[
-                            'font-medium transition-colors',
-                            item.isButton
-                                ? ' bg-cyan-900  text-white px-6 py-3 rounded-xl hover:from-cyan-900 hover:to-cyan-600 transition-all transform hover:-translate-y-0.5'
-                                : variant === 'hero'
-                                  ? 'text-gray-700 hover:text-cyan-600'
-                                  : 'text-gray-600 hover:text-blue-600',
-                        ]"
-                    >
-                        {{ item.label }}
-                    </NuxtLink>
+                    <template v-for="item in navigationItems" :key="item.key">
+                        <Button
+                            v-if="item.isButton"
+                            :variant="ButtonVariant.Primary"
+                            :size="ButtonSize.SM"
+                            @click="navigateTo(item.to)"
+                        >
+                            {{ item.label }}
+                        </Button>
+                        <NuxtLink
+                            v-else
+                            :to="item.to"
+                            :class="[
+                                'font-medium transition-colors',
+                                variant === 'hero'
+                                    ? 'text-gray-700 hover:text-cyan-600'
+                                    : 'text-gray-600 hover:text-blue-600',
+                            ]"
+                        >
+                            {{ item.label }}
+                        </NuxtLink>
+                    </template>
                 </nav>
             </div>
         </div>
@@ -65,6 +72,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { Button, ButtonVariant, ButtonSize } from '~/components/ui/Button';
 
 interface NavigationItem {
     key: string;

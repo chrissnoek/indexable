@@ -1,85 +1,108 @@
 {
-  "common": {
-    "navigation": {
-      "home": "Home",
-      "search": "Zoeken",
-      "submit": "Registreren",
-      "admin": "Admin",
-      "experts": "Deskundigen",
-      "about": "Over ons",
-      "contact": "Contact"
-    },
-    "actions": {
-      "loading": "Laden...",
-      "error": "Fout",
-      "success": "Succes",
-      "cancel": "Annuleren",
-      "save": "Opslaan",
-      "delete": "Verwijderen",
-      "edit": "Bewerken",
-      "view": "Bekijken",
-      "back": "Terug",
-      "next": "Volgende",
-      "previous": "Vorige",
-      "submit": "Verzenden",
-      "reset": "Reset",
-      "filter": "Filteren",
-      "search": "Zoeken",
-      "download": "Downloaden",
-      "print": "Printen",
-      "share": "Delen",
-      "contact": "Contact opnemen"
-    },
-    "messages": {
-      "confirmDelete": "Weet u zeker dat u dit item wilt verwijderen?",
-      "noResults": "Geen resultaten gevonden",
-      "loadingData": "Gegevens laden...",
-      "saving": "Opslaan...",
-      "saved": "Succesvol opgeslagen",
-      "deleted": "Succesvol verwijderd",
-      "error": "Er is een fout opgetreden",
-      "tryAgain": "Probeer het opnieuw",
-      "required": "Dit veld is verplicht",
-      "invalid": "Ongeldige invoer",
-      "success": "Actie succesvol uitgevoerd"
-    },
-    "labels": {
-      "name": "Naam",
-      "email": "E-mailadres",
-      "phone": "Telefoonnummer",
-      "address": "Adres",
-      "city": "Plaats",
-      "province": "Provincie",
-      "country": "Land",
-      "website": "Website",
-      "description": "Omschrijving",
-      "expertise": "Expertisegebied",
-      "experience": "Ervaring",
-      "rate": "Uurtarief",
-      "availability": "Beschikbaarheid",
-      "language": "Taal",
-      "certification": "Certificering"
-    },
-    "status": {
-      "pending": "In behandeling",
-      "approved": "Goedgekeurd",
-      "rejected": "Afgewezen",
-      "active": "Actief",
-      "inactive": "Inactief",
-      "verified": "Geverifieerd",
-      "unverified": "Niet geverifieerd"
-    },
-    "time": {
-      "today": "Vandaag",
-      "yesterday": "Gisteren",
-      "week": "Week",
-      "month": "Maand",
-      "year": "Jaar",
-      "hours": "uur",
-      "days": "dagen",
-      "immediately": "Direct",
-      "within24h": "Binnen 24 uur",
-      "within48h": "Binnen 48 uur"
+    "common": {
+        "navigation": {
+            "home": "Home",
+            "search": "Zoeken",
+            "submit": "Registreren",
+            "admin": "Admin",
+            "experts": "Deskundigen",
+            "about": "Over ons",
+            "contact": "Contact"
+        },
+        "actions": {
+            "loading": "Laden...",
+            "error": "Fout",
+            "success": "Succes",
+            "cancel": "Annuleren",
+            "save": "Opslaan",
+            "delete": "Verwijderen",
+            "edit": "Bewerken",
+            "view": "Bekijken",
+            "back": "Terug",
+            "next": "Volgende",
+            "previous": "Vorige",
+            "submit": "Verzenden",
+            "reset": "Reset",
+            "filter": "Filteren",
+            "search": "Zoeken",
+            "download": "Downloaden",
+            "print": "Printen",
+            "share": "Delen",
+            "contact": "Contact opnemen"
+        },
+        "messages": {
+            "confirmDelete": "Weet u zeker dat u dit item wilt verwijderen?",
+            "noResults": "Geen resultaten gevonden",
+            "loadingData": "Gegevens laden...",
+            "saving": "Opslaan...",
+            "saved": "Succesvol opgeslagen",
+            "deleted": "Succesvol verwijderd",
+            "error": "Er is een fout opgetreden",
+            "tryAgain": "Probeer het opnieuw",
+            "required": "Dit veld is verplicht",
+            "invalid": "Ongeldige invoer",
+            "success": "Actie succesvol uitgevoerd"
+        },
+        "labels": {
+            "name": "Naam",
+            "email": "E-mailadres",
+            "phone": "Telefoonnummer",
+            "address": "Adres",
+            "city": "Plaats",
+            "province": "Provincie",
+            "country": "Land",
+            "website": "Website",
+            "description": "Omschrijving",
+            "expertise": "Expertisegebied",
+            "experience": "Ervaring",
+            "rate": "Uurtarief",
+            "availability": "Beschikbaarheid",
+            "language": "Taal",
+            "certification": "Certificering"
+        },
+        "status": {
+            "pending": "In behandeling",
+            "approved": "Goedgekeurd",
+            "rejected": "Afgewezen",
+            "active": "Actief",
+            "inactive": "Inactief",
+            "verified": "Geverifieerd",
+            "unverified": "Niet geverifieerd"
+        },
+        "time": {
+            "today": "Vandaag",
+            "yesterday": "Gisteren",
+            "week": "Week",
+            "month": "Maand",
+            "year": "Jaar",
+            "hours": "uur",
+            "days": "dagen",
+            "immediately": "Direct",
+            "within24h": "Binnen 24 uur",
+            "within48h": "Binnen 48 uur"
+        },
+        "consent": {
+            "title": "Cookie-instellingen",
+            "description": "We gebruiken cookies om uw ervaring te verbeteren en onze website te analyseren. U kunt uw voorkeuren beheren of alle cookies accepteren.",
+            "acceptAll": "Alles accepteren",
+            "rejectAll": "Alles weigeren",
+            "manage": "Voorkeuren beheren",
+            "cancel": "Annuleren",
+            "savePreferences": "Voorkeuren opslaan",
+            "alwaysActive": "Altijd actief",
+            "preferences": {
+                "title": "Cookie-voorkeuren"
+            },
+            "categories": {
+                "essential": "Essentiële cookies",
+                "essentialDesc": "Deze cookies zijn noodzakelijk voor het functioneren van de website en kunnen niet worden uitgeschakeld.",
+                "analytics": "Analytische cookies",
+                "analyticsDesc": "Deze cookies helpen ons te begrijpen hoe bezoekers onze website gebruiken door anoniem informatie te verzamelen.",
+                "marketing": "Marketing cookies",
+                "marketingDesc": "Deze cookies worden gebruikt om advertenties weer te geven die relevant zijn voor u en uw interesses.",
+                "personalization": "Personalisatie cookies",
+                "personalizationDesc": "Deze cookies stellen ons in staat om uw ervaring te personaliseren op basis van uw voorkeuren."
+            }
+        }
     }
-  }
 }

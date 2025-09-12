@@ -12,7 +12,13 @@ export default defineNuxtConfig({
         '@': path.resolve(__dirname, './'),
     },
 
-    modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxt/content'],
+    modules: [
+        '@nuxt/eslint',
+        '@nuxtjs/i18n',
+        '@nuxt/content',
+        '@nuxtjs/seo',
+        '@nuxt/scripts',
+    ],
 
     content: {
         documentDriven: false,
@@ -52,6 +58,26 @@ export default defineNuxtConfig({
         defaultLocale: 'nl',
         strategy: 'prefix_except_default',
     },
+    scripts: {
+        registry: {
+            googleTagManager: {
+                id: process.env.NUXT_PUBLIC_GTM_ID || 'GTM-PLACEHOLDER',
+                loadingStrategy: 'defer',
+                consentMode: true,
+                defaultConsent: {
+                    ad_storage: 'denied',
+                    ad_user_data: 'denied', 
+                    ad_personalization: 'denied',
+                    analytics_storage: 'denied',
+                    functionality_storage: 'granted',
+                    personalization_storage: 'denied',
+                    security_storage: 'granted',
+                    wait_for_update: 2000,
+                },
+            },
+        },
+    },
+
     vite: {
         plugins: [tailwindcss()],
     },
