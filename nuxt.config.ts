@@ -20,8 +20,26 @@ export default defineNuxtConfig({
         '@nuxt/scripts',
     ],
 
+    site: {
+        url: (process.env.NUXT_PUBLIC_SITE_URL || process.env.URL || process.env.CF_PAGES_URL || process.env.NUXT_ENV_VERCEL_URL || 'https://deskundigewijzer.nl') as any,
+        name: (process.env.NUXT_ENV_VERCEL_GIT_REPO_SLUG || process.env.SITE_NAME || 'Deskundigewijzer') as any,
+        description: 'Het meest complete platform voor gerechtelijk deskundigen in Nederland',
+        defaultLocale: 'nl',
+        indexable: process.env.NODE_ENV === 'production',
+    },
+
+    runtimeConfig: {
+        public: {
+            site: {
+                url: process.env.NUXT_PUBLIC_SITE_URL || process.env.URL || process.env.CF_PAGES_URL || process.env.NUXT_ENV_VERCEL_URL || 'https://deskundigewijzer.nl',
+                name: process.env.NUXT_ENV_VERCEL_GIT_REPO_SLUG || process.env.SITE_NAME || 'Deskundigewijzer',
+                description: 'Het meest complete platform voor gerechtelijk deskundigen in Nederland',
+            },
+        },
+    },
+
     content: {
-        documentDriven: false,
+        // documentDriven: false,
     },
 
     i18n: {

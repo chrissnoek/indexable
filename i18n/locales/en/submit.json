@@ -102,8 +102,11 @@
             "privacyPolicy": "Privacy Policy",
             "dataProcessing": "I consent to the processing of my data",
             "marketing": "I want to receive updates about new cases and opportunities",
-            "verification": "I declare that all information provided is truthful *"
+            "verification": "I declare that all information provided is truthful *",
+            "reviewMessage": ". Your application will be reviewed within 48 hours."
         },
+        "contactInformation": "Contact Information",
+        "address": "Address Information",
         "submit": "Submit Registration",
         "submitting": "Submitting...",
         "saveDraft": "Save Draft",
@@ -117,5 +120,22 @@
         },
         "pageTitle": "Register as Expert - Experts Directory",
         "pageDescription": "Join the largest network of court experts in the Netherlands. Increase your reach with lawyers and courts."
+    },
+    "form": {
+        "phone": "Phone Number",
+        "phonePlaceholder": "+31 6 12345678",
+        "email": "Email Address",
+        "emailPlaceholder": "your.email{'@'}example.com",
+        "website": "Website",
+        "websitePlaceholder": "https://www.yourwebsite.com",
+        "streetAddress": "Street and Number",
+        "streetAddressPlaceholder": "Main Street 123",
+        "city": "City",
+        "cityPlaceholder": "Amsterdam",
+        "country": "Country",
+        "selectCountry": "Select a country",
+        "netherlands": "Netherlands",
+        "belgium": "Belgium",
+        "germany": "Germany"
     }
 }

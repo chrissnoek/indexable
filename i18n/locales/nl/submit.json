@@ -102,8 +102,11 @@
             "privacyPolicy": "Privacybeleid",
             "dataProcessing": "Ik geef toestemming voor het verwerken van mijn gegevens",
             "marketing": "Ik wil updates ontvangen over nieuwe zaken en mogelijkheden",
-            "verification": "Ik verklaar dat alle verstrekte informatie waarheidsgetrouw is *"
+            "verification": "Ik verklaar dat alle verstrekte informatie waarheidsgetrouw is *",
+            "reviewMessage": ". Uw aanvraag wordt binnen 48 uur beoordeeld."
         },
+        "contactInformation": "Contactgegevens",
+        "address": "Adresgegevens",
         "submit": "Registratie Indienen",
         "submitting": "Indienen...",
         "saveDraft": "Concept Opslaan",
@@ -117,5 +120,22 @@
         },
         "pageTitle": "Registreer als Deskundige - Deskundigen Directory",
         "pageDescription": "Word onderdeel van het grootste netwerk van gerechtelijk deskundigen in Nederland. Vergroot uw bereik bij advocaten en rechtbanken."
+    },
+    "form": {
+        "phone": "Telefoonnummer",
+        "phonePlaceholder": "+31 6 12345678",
+        "email": "E-mailadres",
+        "emailPlaceholder": "uw.email{'@'}voorbeeld.nl",
+        "website": "Website",
+        "websitePlaceholder": "https://www.uwwebsite.nl",
+        "streetAddress": "Straat en huisnummer",
+        "streetAddressPlaceholder": "Hoofdstraat 123",
+        "city": "Plaats",
+        "cityPlaceholder": "Amsterdam",
+        "country": "Land",
+        "selectCountry": "Selecteer een land",
+        "netherlands": "Nederland",
+        "belgium": "België",
+        "germany": "Duitsland"
     }
 }

@@ -1,5 +1,6 @@
 {
   "name": "nuxt-app",
+  "description": "Het meest complete platform voor gerechtelijk deskundigen in Nederland",
   "type": "module",
   "private": true,
   "scripts": {

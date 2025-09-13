@@ -58,7 +58,7 @@
                                 'font-medium transition-colors',
                                 variant === 'hero'
                                     ? 'text-gray-700 hover:text-cyan-600'
-                                    : 'text-gray-600 hover:text-blue-600',
+                                    : 'text-gray-600 hover:text-cyan-600',
                             ]"
                         >
                             {{ item.label }}

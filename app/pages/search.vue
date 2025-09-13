@@ -203,7 +203,7 @@
                             :class="[
                                 'px-3 py-2 rounded-lg text-sm font-medium',
                                 viewMode === 'grid'
-                                    ? 'bg-blue-600 text-white'
+                                    ? 'bg-cyan-600 text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
                             ]"
                         >
@@ -214,7 +214,7 @@
                             :class="[
                                 'px-3 py-2 rounded-lg text-sm font-medium',
                                 viewMode === 'list'
-                                    ? 'bg-blue-600 text-white'
+                                    ? 'bg-cyan-600 text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
                             ]"
                         >
@@ -258,7 +258,7 @@
                     </p>
                     <button
                         @click="clearAllFilters"
-                        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+                        class="bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-700"
                     >
                         {{ $t('search.results.clearFilters') }}
                     </button>
@@ -294,7 +294,7 @@
                             {{ company.description }}
                         </p>
                         <div class="flex items-center justify-between text-sm">
-                            <span class="text-blue-600 capitalize">{{
+                            <span class="text-cyan-600 capitalize">{{
                                 company.type
                             }}</span>
                             <span class="text-gray-600">{{
@@ -304,7 +304,7 @@
                         <div class="mt-4 pt-4 border-t border-gray-200">
                             <NuxtLink
                                 :to="`/expert/${company.id}`"
-                                class="text-blue-600 hover:text-blue-800 font-medium"
+                                class="text-cyan-600 hover:text-cyan-700 font-medium"
                             >
                                 {{ $t('search.results.viewProfile') }} →
                             </NuxtLink>
@@ -368,7 +368,7 @@
                             <div class="mt-4 md:mt-0 md:ml-6">
                                 <NuxtLink
                                     :to="`/expert/${company.id}`"
-                                    class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 inline-block"
+                                    class="bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-700 inline-block"
                                 >
                                     {{ $t('search.results.viewProfile') }}
                                 </NuxtLink>

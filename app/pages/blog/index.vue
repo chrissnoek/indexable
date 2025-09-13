@@ -16,13 +16,13 @@
             <Meta property="og:type" content="website" />
             <Meta
                 property="og:url"
-                content="https://deskundigen-directory.nl/blog"
+                content="https://deskundigewijzer.nl/blog"
             />
 
             <!-- Canonical -->
             <Link
                 rel="canonical"
-                href="https://deskundigen-directory.nl/blog"
+                href="https://deskundigewijzer.nl/blog"
             />
         </Head>
 
@@ -82,7 +82,7 @@
                             >
                                 <NuxtLink
                                     :to="post._path"
-                                    class="hover:text-blue-600"
+                                    class="hover:text-cyan-600"
                                 >
                                     {{ post.title }}
                                 </NuxtLink>
@@ -107,7 +107,7 @@
 
                             <NuxtLink
                                 :to="post.path"
-                                class="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                                class="mt-4 inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium"
                             >
                                 {{ $t('blog.index.readMore') }}
                             </NuxtLink>

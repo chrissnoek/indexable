@@ -51,7 +51,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <NuxtLink
                             to="/"
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+                            class="bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-700"
                         >
                             {{ $t('submit.backToHome') }}
                         </NuxtLink>
@@ -348,13 +348,13 @@
                                 {{ $t('submit.terms.accept') }}
                                 <a
                                     href="#"
-                                    class="text-blue-600 hover:text-blue-800"
+                                    class="text-cyan-600 hover:text-cyan-700"
                                     >{{ $t('submit.terms.termsOfService') }}</a
                                 >
                                 {{ $t('submit.terms.and') }}
                                 <a
                                     href="#"
-                                    class="text-blue-600 hover:text-blue-800"
+                                    class="text-cyan-600 hover:text-cyan-700"
                                     >{{ $t('submit.terms.privacyPolicy') }}</a
                                 >{{ $t('submit.terms.reviewMessage') }}
                             </label>
@@ -363,7 +363,7 @@
                         <button
                             type="submit"
                             :disabled="loading || !acceptTerms"
-                            class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                            class="w-full bg-cyan-600 text-white py-3 px-4 rounded-lg hover:bg-cyan-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
                         >
                             <span
                                 v-if="loading"

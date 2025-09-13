@@ -279,7 +279,7 @@
                         <div class="space-y-3">
                             <a
                                 :href="`tel:${company.phone}`"
-                                class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
+                                class="w-full bg-cyan-600 text-white py-3 px-4 rounded-lg hover:bg-cyan-700 transition-colors flex items-center justify-center"
                             >
                                 <svg
                                     class="w-5 h-5 mr-2"

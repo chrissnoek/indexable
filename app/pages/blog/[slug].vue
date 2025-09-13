@@ -28,7 +28,7 @@
             <Meta property="og:type" content="article" />
             <Meta
                 property="og:url"
-                :content="`https://deskundigen-directory.nl/blog/${$route.params.slug}`"
+                :content="`https://deskundigewijzer.nl/blog/${$route.params.slug}`"
             />
             <Meta property="og:locale" content="nl_NL" />
             <Meta property="og:site_name" content="Deskundigen Directory" />
@@ -52,7 +52,7 @@
 
             <Link
                 rel="canonical"
-                :href="`https://deskundigen-directory.nl/blog/${$route.params.slug}`"
+                :href="`https://deskundigewijzer.nl/blog/${$route.params.slug}`"
             />
         </Head>
 
@@ -206,7 +206,7 @@
                                 >
                                     <a
                                         :href="`#${link.id}`"
-                                        class="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium block py-1"
+                                        class="text-cyan-600 hover:text-cyan-700 hover:underline text-sm font-medium block py-1"
                                     >
                                         {{ link.text }}
                                     </a>
@@ -220,7 +220,7 @@
                                         >
                                             <a
                                                 :href="`#${child.id}`"
-                                                class="text-gray-600 hover:text-blue-600 hover:underline text-sm block py-0.5"
+                                                class="text-gray-600 hover:text-cyan-600 hover:underline text-sm block py-0.5"
                                             >
                                                 {{ child.text }}
                                             </a>
@@ -233,7 +233,7 @@
 
                     <div class="prose prose-lg prose-blue max-w-none">
                         <div
-                            class="prose-headings:font-bold prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-strong:text-gray-900 prose-strong:font-semibold prose-ul:my-6 prose-li:mb-2 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
+                            class="prose-headings:font-bold prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-strong:text-gray-900 prose-strong:font-semibold prose-ul:my-6 prose-li:mb-2 prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-700"
                         >
                             <ContentRenderer :value="data" />
                         </div>
@@ -251,7 +251,7 @@
                             </p>
                             <NuxtLink
                                 to="/search"
-                                class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                                class="inline-flex items-center px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-lg transition-colors"
                             >
                                 <svg
                                     class="w-5 h-5 mr-2"
@@ -295,7 +295,7 @@
                                 >
                                     <NuxtLink
                                         :to="relatedPost.path"
-                                        class="hover:text-blue-600"
+                                        class="hover:text-cyan-600"
                                     >
                                         {{ relatedPost.title }}
                                     </NuxtLink>
@@ -411,22 +411,22 @@ useHead({
                 author: {
                     '@type': 'Organization',
                     name: 'Deskundigen Directory',
-                    url: 'https://deskundigen-directory.nl',
+                    url: 'https://deskundigewijzer.nl',
                 },
                 publisher: {
                     '@type': 'Organization',
                     name: 'Deskundigen Directory',
-                    url: 'https://deskundigen-directory.nl',
+                    url: 'https://deskundigewijzer.nl',
                     logo: {
                         '@type': 'ImageObject',
-                        url: 'https://deskundigen-directory.nl/logo.png',
+                        url: 'https://deskundigewijzer.nl/logo.png',
                     },
                 },
                 datePublished: data.value?.date,
                 dateModified: data.value?.date,
                 mainEntityOfPage: {
                     '@type': 'WebPage',
-                    '@id': `https://deskundigen-directory.nl/blog/${params.slug}`,
+                    '@id': `https://deskundigewijzer.nl/blog/${params.slug}`,
                 },
                 keywords: data.value?.tags?.join(', '),
                 articleSection: 'Juridische expertise',
@@ -443,19 +443,19 @@ useHead({
                         '@type': 'ListItem',
                         position: 1,
                         name: 'Home',
-                        item: 'https://deskundigen-directory.nl',
+                        item: 'https://deskundigewijzer.nl',
                     },
                     {
                         '@type': 'ListItem',
                         position: 2,
                         name: 'Blog',
-                        item: 'https://deskundigen-directory.nl/blog',
+                        item: 'https://deskundigewijzer.nl/blog',
                     },
                     {
                         '@type': 'ListItem',
                         position: 3,
                         name: data.value?.title,
-                        item: `https://deskundigen-directory.nl/blog/${params.slug}`,
+                        item: `https://deskundigewijzer.nl/blog/${params.slug}`,
                     },
                 ],
             }),
