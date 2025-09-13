@@ -60,10 +60,11 @@
                 >
                     <article
                         v-for="post in data"
-                        :key="post._path"
+                        :key="post.path"
                         class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
                     >
                         <img
+                            v-if="post.coverImage || `/blog-images/${post.path.split('/').pop()}.png`"
                             :src="post.coverImage || `/blog-images/${post.path.split('/').pop()}.png`"
                             :alt="post.title"
                             class="w-full h-48 object-cover"
@@ -81,7 +82,7 @@
                                 class="mt-2 text-xl font-semibold text-gray-900"
                             >
                                 <NuxtLink
-                                    :to="post._path"
+                                    :to="post.path"
                                     class="hover:text-cyan-600"
                                 >
                                     {{ post.title }}
@@ -129,11 +130,14 @@
 </template>
 
 <script setup>
-const { data, pending, error } = await useAsyncData(() =>
-    queryCollection('content').all()
-);
+const route = useRoute();
 
-console.log(data.value);
+// Fetch blog posts from the content/blog directory using Nuxt Content v3
+const { data, pending, error } = await useAsyncData(route.path, () =>
+    queryCollection('blog')
+        .order('date', 'DESC')
+        .all()
+);
 
 // Utility function to format date
 const formatDate = (dateString) => {

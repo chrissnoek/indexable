@@ -72,7 +72,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Button, ButtonVariant, ButtonSize } from '~/components/ui/Button';
+import Button from '~/components/ui/Button/Button.vue';
+import { ButtonVariant, ButtonSize } from '~/components/ui/Button/types';
 
 interface NavigationItem {
     key: string;

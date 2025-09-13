@@ -1,0 +1,56 @@
+{
+    "about": {
+        "meta": {
+            "title": "About Us - Indexable",
+            "description": "Learn more about Indexable, the platform for finding reliable experts for legal cases in the Netherlands."
+        },
+        "hero": {
+            "title": "About Indexable",
+            "subtitle": "Your trusted partner for finding experts"
+        },
+        "content": {
+            "intro": {
+                "title": "Who we are",
+                "text": "Indexable is the leading platform in the Netherlands for finding qualified experts for legal cases. We connect legal professionals with the right expertise for their specific case."
+            },
+            "mission": {
+                "title": "Our mission",
+                "text": "We strive to support the legal sector by providing access to an extensive network of reliable and qualified experts. Our goal is to simplify and accelerate the process of finding the right expertise."
+            },
+            "values": {
+                "title": "Our values",
+                "quality": {
+                    "title": "Quality",
+                    "description": "We ensure the highest standards by only including certified and experienced experts."
+                },
+                "transparency": {
+                    "title": "Transparency",
+                    "description": "Clear information about expertise, experience and rates of all experts."
+                },
+                "reliability": {
+                    "title": "Reliability",
+                    "description": "Verified profiles and reviews for maximum trust."
+                },
+                "efficiency": {
+                    "title": "Efficiency",
+                    "description": "Quickly and easily find the right expert for your case."
+                }
+            },
+            "team": {
+                "title": "Our team",
+                "text": "Our team consists of experienced professionals from both the legal and technology sectors, united in the mission to provide the best service."
+            },
+            "contact": {
+                "title": "Get in touch",
+                "text": "Do you have questions or would you like more information? Feel free to contact us.",
+                "button": "Go to contact page"
+            }
+        },
+        "stats": {
+            "experts": "Experts",
+            "cases": "Cases supported",
+            "years": "Years of experience",
+            "satisfaction": "Satisfaction"
+        }
+    }
+}

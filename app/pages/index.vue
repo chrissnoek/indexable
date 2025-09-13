@@ -244,7 +244,8 @@
 import type { Company } from '~/types/company';
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
-import { Button, ButtonVariant, ButtonSize } from '~/components/ui/Button';
+import Button from '~/components/ui/Button/Button.vue';
+import { ButtonVariant, ButtonSize } from '~/components/ui/Button/types';
 
 const searchQuery = ref('');
 const loading = ref(true);

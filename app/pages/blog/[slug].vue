@@ -341,36 +341,20 @@ const imageSrc = computed(() => {
     return data.value?.coverImage || `/blog-images/${params.slug}.png`;
 });
 // Fetch the blog post content from content/blog directory
-const { data } = await useAsyncData(() =>
-    queryCollection('content').path(`/blog/${params.slug}`).first()
+const { data } = await useAsyncData(path, () =>
+    queryCollection('blog')
+        .path(path)
+        .first()
 );
 
 // Fetch related posts from content/blog (exclude current post, limit to 4)
-const { data: relatedPosts } = await useAsyncData('content', async () => {
-    try {
-        if (typeof queryContent !== 'undefined') {
-            return await queryCollection('content')
-                .path('blog')
-                .where({ _path: { $ne: `/blog/${params.slug}` } })
-                .sort({ date: -1 })
-                .limit(4)
-                .find();
-        } else {
-            const posts = await $fetch('/api/_content/query', {
-                method: 'GET',
-                params: {
-                    _path: '/blog',
-                    _sort: 'date:desc',
-                    _limit: 4,
-                },
-            });
-            return posts?.filter((p) => p._path !== `/blog/${params.slug}`);
-        }
-    } catch (e) {
-        console.error('Error fetching related posts:', e);
-        return [];
-    }
-});
+const { data: relatedPosts } = await useAsyncData('related-posts', () =>
+    queryCollection('blog')
+        .where('path', '!=', path)
+        .order('date', 'DESC')
+        .limit(4)
+        .all()
+);
 
 // Utility functions
 const formatDate = (dateString) => {
@@ -390,8 +374,8 @@ const readingTime = (content) => {
     return Math.ceil(wordCount / wordsPerMinute);
 };
 
-// Handle 404
-if (!data.value) {
+// Handle 404 - only throw error in client-side after hydration
+if (!data.value && process.client) {
     throw createError({
         statusCode: 404,
         statusMessage: 'Blog post not found',

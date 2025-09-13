@@ -47,6 +47,7 @@
 </template>
 
 <script setup>
+import { queryContent } from '@nuxt/content';
 // Simple fetch without any sorting or complex logic
 const { data: posts, pending, error } = await useAsyncData(
   'simple-blog-posts',

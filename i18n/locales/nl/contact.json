@@ -1,0 +1,79 @@
+{
+    "contact": {
+        "meta": {
+            "title": "Contact - Indexable",
+            "description": "Neem contact op met Indexable voor vragen over ons platform of om een deskundige te worden."
+        },
+        "hero": {
+            "title": "Contact",
+            "subtitle": "We staan klaar om u te helpen"
+        },
+        "form": {
+            "title": "Stuur ons een bericht",
+            "description": "Vul het onderstaande formulier in en we nemen zo snel mogelijk contact met u op.",
+            "fields": {
+                "name": {
+                    "label": "Naam",
+                    "placeholder": "Uw volledige naam"
+                },
+                "email": {
+                    "label": "E-mailadres",
+                    "placeholder": "uw.email{'@'}voorbeeld.nl"
+                },
+                "phone": {
+                    "label": "Telefoonnummer",
+                    "placeholder": "+31 6 12345678"
+                },
+                "subject": {
+                    "label": "Onderwerp",
+                    "placeholder": "Waar gaat uw vraag over?",
+                    "options": {
+                        "general": "Algemene vraag",
+                        "expert": "Deskundige worden",
+                        "technical": "Technische ondersteuning",
+                        "legal": "Juridische vraag",
+                        "partnership": "Samenwerking",
+                        "other": "Anders"
+                    }
+                },
+                "message": {
+                    "label": "Bericht",
+                    "placeholder": "Vertel ons hoe we u kunnen helpen..."
+                }
+            },
+            "submit": "Bericht versturen",
+            "success": "Bedankt voor uw bericht! We nemen zo snel mogelijk contact met u op.",
+            "error": "Er is iets misgegaan. Probeer het later opnieuw of neem telefonisch contact op."
+        },
+        "info": {
+            "title": "Contactgegevens",
+            "description": "U kunt ons ook direct bereiken via:",
+            "email": {
+                "label": "E-mail",
+                "value": "info{'@'}deskundigewijzer.nl"
+            },
+            "phone": {
+                "label": "Telefoon",
+                "value": "+31 20 123 4567"
+            },
+            "address": {
+                "label": "Adres",
+                "value": "Herengracht 100\n1015 BS Amsterdam\nNederland"
+            },
+            "hours": {
+                "label": "Openingstijden",
+                "value": "Maandag - Vrijdag: 9:00 - 17:00\nZaterdag - Zondag: Gesloten"
+            }
+        },
+        "support": {
+            "title": "Veelgestelde vragen",
+            "description": "Bekijk onze FAQ voor snelle antwoorden op veelvoorkomende vragen.",
+            "button": "Naar FAQ"
+        },
+        "emergency": {
+            "title": "Spoedeisende zaken",
+            "description": "Voor spoedeisende juridische zaken kunt u ons 24/7 bereiken via:",
+            "phone": "+31 20 999 8888"
+        }
+    }
+}

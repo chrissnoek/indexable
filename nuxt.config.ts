@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
 
+    nitro: {
+        prerender: {
+            failOnError: false
+        }
+    },
+
     css: ['@/assets/css/main.css'],
 
     alias: {
@@ -56,6 +62,8 @@ export default defineNuxtConfig({
                     'en/admin.json',
                     'en/expert.json',
                     'en/blog.json',
+                    'en/about.json',
+                    'en/contact.json',
                 ],
             },
             {
@@ -70,6 +78,8 @@ export default defineNuxtConfig({
                     'nl/admin.json',
                     'nl/expert.json',
                     'nl/blog.json',
+                    'nl/about.json',
+                    'nl/contact.json',
                 ],
             },
         ],

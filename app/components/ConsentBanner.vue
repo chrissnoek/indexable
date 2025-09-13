@@ -181,7 +181,8 @@
 </template>
 
 <script setup lang="ts">
-import { Button, ButtonVariant, ButtonSize } from '~/components/ui/Button';
+import Button from '~/components/ui/Button/Button.vue';
+import { ButtonVariant, ButtonSize } from '~/components/ui/Button/types';
 
 interface ConsentPreferences {
     analytics: boolean;
