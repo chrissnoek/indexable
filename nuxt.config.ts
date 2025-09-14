@@ -84,6 +84,7 @@ export default defineNuxtConfig({
             },
         ],
         defaultLocale: 'nl',
+        detectBrowserLanguage: false,
         strategy: 'prefix_except_default',
     },
     scripts: {
