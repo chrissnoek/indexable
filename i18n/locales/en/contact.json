@@ -1,79 +1,20 @@
 {
     "contact": {
-        "meta": {
-            "title": "Contact - Indexable",
-            "description": "Contact Indexable for questions about our platform or to become an expert."
-        },
-        "hero": {
-            "title": "Contact",
-            "subtitle": "We're here to help you"
-        },
+        "title": "Contact",
         "form": {
             "title": "Send us a message",
-            "description": "Fill out the form below and we'll get back to you as soon as possible.",
-            "fields": {
-                "name": {
-                    "label": "Name",
-                    "placeholder": "Your full name"
-                },
-                "email": {
-                    "label": "Email address",
-                    "placeholder": "your.email{'@'}example.com"
-                },
-                "phone": {
-                    "label": "Phone number",
-                    "placeholder": "+31 6 12345678"
-                },
-                "subject": {
-                    "label": "Subject",
-                    "placeholder": "What is your question about?",
-                    "options": {
-                        "general": "General inquiry",
-                        "expert": "Become an expert",
-                        "technical": "Technical support",
-                        "legal": "Legal question",
-                        "partnership": "Partnership",
-                        "other": "Other"
-                    }
-                },
-                "message": {
-                    "label": "Message",
-                    "placeholder": "Tell us how we can help you..."
-                }
-            },
-            "submit": "Send message",
-            "success": "Thank you for your message! We'll get back to you as soon as possible.",
-            "error": "Something went wrong. Please try again later or contact us by phone."
+            "name": "Name",
+            "email": "Email address",
+            "subject": "Subject",
+            "message": "Message",
+            "submit": "Send message"
         },
         "info": {
             "title": "Contact information",
-            "description": "You can also reach us directly via:",
-            "email": {
-                "label": "Email",
-                "value": "info{'@'}deskundigewijzer.nl"
-            },
-            "phone": {
-                "label": "Phone",
-                "value": "+31 20 123 4567"
-            },
-            "address": {
-                "label": "Address",
-                "value": "Herengracht 100\n1015 BS Amsterdam\nNetherlands"
-            },
-            "hours": {
-                "label": "Business hours",
-                "value": "Monday - Friday: 9:00 AM - 5:00 PM\nSaturday - Sunday: Closed"
-            }
-        },
-        "support": {
-            "title": "Frequently asked questions",
-            "description": "Check our FAQ for quick answers to common questions.",
-            "button": "Go to FAQ"
-        },
-        "emergency": {
-            "title": "Urgent matters",
-            "description": "For urgent legal matters, you can reach us 24/7 at:",
-            "phone": "+31 20 999 8888"
+            "email": "Email",
+            "phone": "Phone",
+            "hours": "Business hours",
+            "hoursText": "Monday - Friday: 9:00 AM - 5:00 PM"
         }
     }
 }

@@ -1,13 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <Header
-      variant="simple"
-      :navigationItems="[
-        { key: 'search', to: '/search', label: $t('common.navigation.search') },
-        { key: 'blog', to: '/blog', label: $t('blog.navigation.blog') },
-        { key: 'submit', to: '/submit', label: $t('common.navigation.submit'), isButton: true }
-      ]"
-    />
+    <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="max-w-3xl mx-auto">
@@ -78,14 +71,6 @@
           </form>
         </div>
 
-        <div class="bg-blue-50 rounded-lg p-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t('contact.info.title') }}</h3>
-          <div class="space-y-3 text-gray-600">
-            <p>{{ $t('contact.info.email') }}: info@deskundigewijzer.nl</p>
-            <p>{{ $t('contact.info.phone') }}: +31 (0)20 123 4567</p>
-            <p>{{ $t('contact.info.hours') }}: {{ $t('contact.info.hoursText') }}</p>
-          </div>
-        </div>
       </div>
     </main>
 

@@ -57,14 +57,7 @@
         </Head>
 
         <div class="min-h-screen bg-gray-50">
-            <Header
-                variant="simple"
-                :navigationItems="[
-                    { key: 'search', to: '/search', label: $t('common.navigation.search') },
-                    { key: 'blog', to: '/blog', label: $t('blog.navigation.blog') },
-                    { key: 'submit', to: '/submit', label: $t('common.navigation.submit'), isButton: true }
-                ]"
-            />
+            <Header />
 
             <nav
                 aria-label="Breadcrumb"

@@ -1,56 +1,22 @@
 {
     "about": {
-        "meta": {
-            "title": "Over ons - Indexable",
-            "description": "Leer meer over Indexable, het platform voor het vinden van betrouwbare deskundigen voor rechtszaken in Nederland."
+        "title": "Over Deskundigewijzer",
+        "intro": "Deskundigewijzer is het nieuwe platform voor het vinden van gerechtelijk deskundigen in Nederland. Wij maken het eenvoudig om de juiste expertise te vinden voor juridische vraagstukken.",
+        "mission": {
+            "title": "Onze missie",
+            "content": "Wij geloven dat toegang tot de juiste deskundige kennis essentieel is voor een eerlijk juridisch proces. Deskundigewijzer brengt juridische professionals en gekwalificeerde deskundigen samen op één overzichtelijk platform. Door transparantie, kwaliteit en gebruiksgemak centraal te stellen, maken we deskundige kennis toegankelijk voor iedereen die het nodig heeft."
         },
-        "hero": {
-            "title": "Over Indexable",
-            "subtitle": "Uw betrouwbare partner voor het vinden van deskundigen"
+        "services": {
+            "title": "Wat wij bieden",
+            "item1": "Een uitgebreide database van gerechtelijk deskundigen uit verschillende vakgebieden",
+            "item2": "Gedetailleerde profielen met specialisaties, ervaring en contactgegevens",
+            "item3": "Geavanceerde zoekfuncties om snel de juiste deskundige te vinden",
+            "item4": "Mogelijkheid voor deskundigen om zich kosteloos aan te melden"
         },
-        "content": {
-            "intro": {
-                "title": "Wie we zijn",
-                "text": "Indexable is het toonaangevende platform in Nederland voor het vinden van gekwalificeerde deskundigen voor rechtszaken. We verbinden juridische professionals met de juiste expertise voor hun specifieke zaak."
-            },
-            "mission": {
-                "title": "Onze missie",
-                "text": "We streven ernaar om de juridische sector te ondersteunen door toegang te bieden tot een uitgebreid netwerk van betrouwbare en gekwalificeerde deskundigen. Ons doel is om het proces van het vinden van de juiste expertise te vereenvoudigen en te versnellen."
-            },
-            "values": {
-                "title": "Onze waarden",
-                "quality": {
-                    "title": "Kwaliteit",
-                    "description": "We waarborgen de hoogste standaarden door alleen gecertificeerde en ervaren deskundigen op te nemen."
-                },
-                "transparency": {
-                    "title": "Transparantie",
-                    "description": "Duidelijke informatie over expertise, ervaring en tarieven van alle deskundigen."
-                },
-                "reliability": {
-                    "title": "Betrouwbaarheid",
-                    "description": "Geverifieerde profielen en beoordelingen voor maximaal vertrouwen."
-                },
-                "efficiency": {
-                    "title": "Efficiëntie",
-                    "description": "Snel en eenvoudig de juiste deskundige vinden voor uw zaak."
-                }
-            },
-            "team": {
-                "title": "Ons team",
-                "text": "Ons team bestaat uit ervaren professionals uit zowel de juridische als technologische sector, verenigd in de missie om de beste service te bieden."
-            },
-            "contact": {
-                "title": "Neem contact op",
-                "text": "Heeft u vragen of wilt u meer informatie? Neem gerust contact met ons op.",
-                "button": "Naar contactpagina"
-            }
-        },
-        "stats": {
-            "experts": "Deskundigen",
-            "cases": "Zaken ondersteund",
-            "years": "Jaar ervaring",
-            "satisfaction": "Tevredenheid"
+        "contact": {
+            "title": "Contact",
+            "content": "Heeft u vragen over Deskundigewijzer of wilt u meer informatie over hoe wij u kunnen helpen? Wij staan voor u klaar.",
+            "button": "Neem contact op"
         }
     }
 }

@@ -11,6 +11,8 @@
             "blog": "Blog"
         },
         "hero": {
+            "logo": "⚖️",
+            "logoText": "Deskundigewijzer",
             "title": "Vind de juiste deskundige voor uw rechtszaak",
             "subtitle": "Betrouwbare gerechtelijk deskundigen voor objectief en onafhankelijk advies",
             "description": "Doorzoek ons netwerk van gecertificeerde deskundigen in heel Nederland. Van medische expertises tot bouwkundige rapporten.",

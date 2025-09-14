@@ -10,16 +10,15 @@
                 <div class="flex items-center space-x-3">
                     <div
                         :class="[
-                            'w-10 h-10 bg-cyan-900 rounded-xl flex items-center justify-center',
+                            'w-10 h-10 bg-slate-200 rounded-xl flex items-center justify-center',
                             variant === 'simple' ? 'w-8 h-8' : '',
                         ]"
                     >
                         <span
                             :class="[
-                                'text-cyan-900',
                                 variant === 'simple' ? 'text-lg' : 'text-xl',
                             ]"
-                            >⚖️</span
+                            >{{ $t('home.hero.logo') }}</span
                         >
                     </div>
                     <NuxtLink
@@ -32,10 +31,7 @@
                         ]"
                     >
                         {{
-                            $t('home.hero.title')
-                                .split(' ')
-                                .slice(0, 2)
-                                .join(' ')
+                            $t('home.hero.logoText')
                         }}
                     </NuxtLink>
                 </div>

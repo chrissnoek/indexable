@@ -1,13 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <Header
-      variant="simple"
-      :navigationItems="[
-        { key: 'search', to: '/search', label: $t('common.navigation.search') },
-        { key: 'blog', to: '/blog', label: $t('blog.navigation.blog') },
-        { key: 'submit', to: '/submit', label: $t('common.navigation.submit'), isButton: true }
-      ]"
-    />
+    <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="max-w-3xl mx-auto">

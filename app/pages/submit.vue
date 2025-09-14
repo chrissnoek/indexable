@@ -1,19 +1,7 @@
 <template>
     <div class="min-h-screen bg-gray-50">
         <!-- Header -->
-        <Header
-            variant="simple"
-            :navigation-items="[
-                { key: 'home', to: '/', label: $t('common.navigation.home') },
-                {
-                    key: 'search',
-                    to: '/search',
-                    label: $t('common.navigation.search'),
-                },
-                { key: 'about', to: '/about', label: $t('home.footer.about') },
-                { key: 'contact', to: '/contact', label: $t('home.footer.contact') },
-            ]"
-        />
+    <Header />
 
         <!-- Success Message -->
         <div

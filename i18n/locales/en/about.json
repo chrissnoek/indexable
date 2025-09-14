@@ -1,56 +1,22 @@
 {
     "about": {
-        "meta": {
-            "title": "About Us - Indexable",
-            "description": "Learn more about Indexable, the platform for finding reliable experts for legal cases in the Netherlands."
+        "title": "About Deskundigewijzer",
+        "intro": "Deskundigewijzer is the new platform for finding judicial experts in the Netherlands. We make it easy to find the right expertise for legal matters.",
+        "mission": {
+            "title": "Our mission",
+            "content": "We believe that access to the right expert knowledge is essential for a fair legal process. Deskundigewijzer brings legal professionals and qualified experts together on one comprehensive platform. By focusing on transparency, quality, and ease of use, we make expert knowledge accessible to everyone who needs it."
         },
-        "hero": {
-            "title": "About Indexable",
-            "subtitle": "Your trusted partner for finding experts"
+        "services": {
+            "title": "What we offer",
+            "item1": "An extensive database of judicial experts from various fields",
+            "item2": "Detailed profiles with specializations, experience, and contact information",
+            "item3": "Advanced search functions to quickly find the right expert",
+            "item4": "Free registration opportunity for experts"
         },
-        "content": {
-            "intro": {
-                "title": "Who we are",
-                "text": "Indexable is the leading platform in the Netherlands for finding qualified experts for legal cases. We connect legal professionals with the right expertise for their specific case."
-            },
-            "mission": {
-                "title": "Our mission",
-                "text": "We strive to support the legal sector by providing access to an extensive network of reliable and qualified experts. Our goal is to simplify and accelerate the process of finding the right expertise."
-            },
-            "values": {
-                "title": "Our values",
-                "quality": {
-                    "title": "Quality",
-                    "description": "We ensure the highest standards by only including certified and experienced experts."
-                },
-                "transparency": {
-                    "title": "Transparency",
-                    "description": "Clear information about expertise, experience and rates of all experts."
-                },
-                "reliability": {
-                    "title": "Reliability",
-                    "description": "Verified profiles and reviews for maximum trust."
-                },
-                "efficiency": {
-                    "title": "Efficiency",
-                    "description": "Quickly and easily find the right expert for your case."
-                }
-            },
-            "team": {
-                "title": "Our team",
-                "text": "Our team consists of experienced professionals from both the legal and technology sectors, united in the mission to provide the best service."
-            },
-            "contact": {
-                "title": "Get in touch",
-                "text": "Do you have questions or would you like more information? Feel free to contact us.",
-                "button": "Go to contact page"
-            }
-        },
-        "stats": {
-            "experts": "Experts",
-            "cases": "Cases supported",
-            "years": "Years of experience",
-            "satisfaction": "Satisfaction"
+        "contact": {
+            "title": "Contact",
+            "content": "Do you have questions about Deskundigewijzer or would you like more information about how we can help you? We're here for you.",
+            "button": "Get in touch"
         }
     }
 }

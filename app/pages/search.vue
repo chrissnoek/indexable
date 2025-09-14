@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen bg-gray-50">
         <!-- Header -->
-        <Header variant="simple" />
+    <Header />
 
         <!-- Search and Filters -->
         <section class="bg-white py-8 border-b">

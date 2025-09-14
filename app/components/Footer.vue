@@ -6,7 +6,7 @@
             class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
         ></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="md:col-span-1">
                     <div class="flex items-center space-x-3 mb-6">
                         <div
@@ -114,25 +114,6 @@
                                 >Bouwkundige rapporten voor de
                                 rechtbank</NuxtLink
                             >
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-bold text-lg mb-6 text-white">
-                        {{ $t('home.footer.contactInfo') }}
-                    </h5>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-300">
-                            <span class="mr-3">📧</span>
-                            {{ $t('home.email') }}
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <span class="mr-3">📞</span>
-                            {{ $t('home.phone') }}
-                        </li>
-                        <li class="flex items-center text-gray-300">
-                            <span class="mr-3">📍</span>
-                            {{ $t('home.address') }}
                         </li>
                     </ul>
                 </div>

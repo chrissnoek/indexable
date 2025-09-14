@@ -11,6 +11,8 @@
             "blog": "Blog"
         },
         "hero": {
+            "logo": "⚖️",
+            "logoText": "Deskundigewijzer",
             "title": "Find the right expert for your legal case",
             "subtitle": "Reliable court experts for objective and independent advice",
             "description": "Search our network of certified experts throughout the Netherlands. From medical expertise to construction reports.",
