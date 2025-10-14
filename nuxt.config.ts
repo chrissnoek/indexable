@@ -32,6 +32,7 @@ export default defineNuxtConfig({
         description: 'Het meest complete platform voor gerechtelijk deskundigen in Nederland',
         defaultLocale: 'nl',
         indexable: process.env.NODE_ENV === 'production',
+        trailingSlash: false,
     },
 
     runtimeConfig: {
