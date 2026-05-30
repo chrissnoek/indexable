@@ -101,14 +101,11 @@ const handleSubmit = () => {
   }
 }
 
-useHead({
-  title: 'Contact | Deskundigen Directory',
-  meta: [
-    {
-      name: 'description',
-      content: 'Neem contact op met Deskundigen Directory voor vragen of ondersteuning.'
-    }
-  ]
+useSeoMeta({
+    title: 'Contact | Deskundigewijzer',
+    description: 'Neem contact op met Deskundigewijzer. Heeft u vragen over ons register of zoekt u een gerechtelijk deskundige? Wij helpen u verder.',
+    ogTitle: 'Contact | Deskundigewijzer',
+    ogType: 'website',
 })
 </script>
 

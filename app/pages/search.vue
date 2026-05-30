@@ -317,6 +317,13 @@
 import type { Company, SearchFilters } from '~/types/company';
 import Header from '~/components/Header.vue';
 
+useSeoMeta({
+    title: 'Zoek Gerechtelijk Deskundigen | Deskundigewijzer',
+    description: 'Doorzoek ons register van gecertificeerde gerechtelijk deskundigen in Nederland. Filter op vakgebied, provincie en tarief. Vind de juiste expert voor uw juridische zaak.',
+    ogTitle: 'Zoek Gerechtelijk Deskundigen | Deskundigewijzer',
+    ogType: 'website',
+});
+
 const route = useRoute();
 const router = useRouter();
 

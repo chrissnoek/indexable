@@ -200,6 +200,14 @@ import Footer from '~/components/Footer.vue';
 import Button from '~/components/ui/Button/Button.vue';
 import { ButtonVariant, ButtonSize } from '~/components/ui/Button/types';
 
+useSeoMeta({
+    title: 'Deskundigewijzer | Gerechtelijk Deskundigen vinden in Nederland',
+    description: 'Vind snel een gecertificeerde gerechtelijk deskundige voor uw juridische zaak. Medisch, bouwkundig, financieel, forensisch en IT-deskundigen in heel Nederland.',
+    ogTitle: 'Deskundigewijzer | Gerechtelijk Deskundigen Nederland',
+    ogDescription: 'Het register voor gecertificeerde gerechtelijk deskundigen in Nederland. Vind de juiste expert voor uw zaak.',
+    ogType: 'website',
+});
+
 const searchQuery = ref('');
 const loading = ref(true);
 const featuredCompanies = ref<Company[]>([]);

@@ -348,58 +348,12 @@ onMounted(async () => {
 // Update page title and meta tags
 watchEffect(() => {
     if (company.value) {
-        useHead({
-            title: `${company.value.name} - ${$t('childcare')} in ${
-                company.value.city
-            }`,
-            meta: [
-                {
-                    name: 'description',
-                    content: `${company.value.description.substring(
-                        0,
-                        160
-                    )}... ${$t('find')} ${company.value.type} ${$t(
-                        'services'
-                    )} in ${company.value.city}.`,
-                },
-                {
-                    name: 'keywords',
-                    content: `${company.value.type}, ${$t('childcare')}, ${
-                        company.value.city
-                    }, ${company.value.ageGroup}`,
-                },
-                {
-                    property: 'og:title',
-                    content: `${company.value.name} - ${$t(
-                        'childcareDirectory'
-                    )}`,
-                },
-                {
-                    property: 'og:description',
-                    content: company.value.description.substring(0, 160),
-                },
-                { property: 'og:type', content: 'business.business' },
-                {
-                    property: 'business:contact_data:street_address',
-                    content: company.value.address,
-                },
-                {
-                    property: 'business:contact_data:locality',
-                    content: company.value.city,
-                },
-                {
-                    property: 'business:contact_data:country_name',
-                    content: company.value.country,
-                },
-                {
-                    property: 'business:contact_data:phone_number',
-                    content: company.value.phone,
-                },
-                {
-                    property: 'business:contact_data:email',
-                    content: company.value.email,
-                },
-            ],
+        useSeoMeta({
+            title: `${company.value.name} | Gerechtelijk Deskundige in ${company.value.city}`,
+            description: `${company.value.name} is een gecertificeerde gerechtelijk deskundige (${company.value.type}) in ${company.value.city}. ${company.value.description.substring(0, 120)}`,
+            ogTitle: `${company.value.name} | Deskundigewijzer`,
+            ogDescription: company.value.description.substring(0, 160),
+            ogType: 'business.business',
         });
     }
 });

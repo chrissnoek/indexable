@@ -163,7 +163,19 @@
                     </aside>
 
                     <div class="prose-editorial article-body">
-                        <ContentRenderer :value="data" />
+                        <template v-if="faqData">
+                            <ContentRenderer :value="beforeFaqContent" />
+                            <FaqAccordion
+                                :id="faqData.id"
+                                :title="faqData.title"
+                                :items="faqData.items"
+                            />
+                            <ContentRenderer
+                                v-if="afterFaqContent"
+                                :value="afterFaqContent"
+                            />
+                        </template>
+                        <ContentRenderer v-else :value="data" />
                     </div>
 
                     <footer class="article-footer">
@@ -280,70 +292,212 @@ if (!data.value && process.client) {
     });
 }
 
-// Add structured data to head
-useHead({
-    script: [
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'Article',
-                headline: data.value?.title,
-                description: data.value?.description,
-                author: {
-                    '@type': 'Organization',
-                    name: 'Deskundigen Directory',
-                    url: 'https://deskundigewijzer.nl',
-                },
-                publisher: {
-                    '@type': 'Organization',
-                    name: 'Deskundigen Directory',
-                    url: 'https://deskundigewijzer.nl',
-                    logo: {
-                        '@type': 'ImageObject',
-                        url: 'https://deskundigewijzer.nl/logo.png',
-                    },
-                },
-                datePublished: data.value?.date,
-                dateModified: data.value?.date,
-                mainEntityOfPage: {
-                    '@type': 'WebPage',
-                    '@id': `https://deskundigewijzer.nl/blog/${params.slug}`,
-                },
-                keywords: data.value?.tags?.join(', '),
-                articleSection: 'Juridische expertise',
-                inLanguage: 'nl-NL',
-            }),
-        },
-        {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'BreadcrumbList',
-                itemListElement: [
-                    {
-                        '@type': 'ListItem',
-                        position: 1,
-                        name: 'Home',
-                        item: 'https://deskundigewijzer.nl',
-                    },
-                    {
-                        '@type': 'ListItem',
-                        position: 2,
-                        name: 'Blog',
-                        item: 'https://deskundigewijzer.nl/blog',
-                    },
-                    {
-                        '@type': 'ListItem',
-                        position: 3,
-                        name: data.value?.title,
-                        item: `https://deskundigewijzer.nl/blog/${params.slug}`,
-                    },
-                ],
-            }),
-        },
-    ],
+// ── FAQ detection ──────────────────────────────────────────────────────────────
+// @nuxt/content v3 stores the body as minimark: { type: "minimark", value: Node[] }
+// Each node is a tuple:  [tagName, propsObj, ...children]
+// Text children are plain strings; nested elements are nested tuples.
+// This code detects "## Veelgestelde vragen" and the H3+answer pairs that follow.
+
+// Returns tag name of a minimark node, or null for text strings.
+function nodeTag(n) {
+    return Array.isArray(n) ? n[0] : null;
+}
+
+// Recursively extract plain text from a minimark node or string.
+function extractText(n) {
+    if (typeof n === 'string') return n;
+    if (!Array.isArray(n)) return '';
+    // n = [tag, props, ...children]
+    return n.slice(2).map(extractText).join('');
+}
+
+function extractAllText(nodes) {
+    if (!nodes?.length) return '';
+    return nodes
+        .map((n) => extractText(n).trim())
+        .filter(Boolean)
+        .join(' ');
+}
+
+const faqData = computed(() => {
+    // body.value is the flat root-level node array in minimark format
+    const nodes = data.value?.body?.value;
+    if (!nodes?.length) return null;
+
+    const faqH2Index = nodes.findIndex(
+        (n) =>
+            nodeTag(n) === 'h2' &&
+            extractText(n).startsWith('Veelgestelde vragen'),
+    );
+    if (faqH2Index === -1) return null;
+
+    const faqH2 = nodes[faqH2Index];
+    // props are at index 1: [tag, props, ...children]
+    const faqId = (faqH2[1] && faqH2[1].id) || 'veelgestelde-vragen';
+    const faqTitle = extractText(faqH2);
+
+    // Collect nodes after FAQ H2 until the next H2
+    let nextH2Index = nodes.length;
+    for (let i = faqH2Index + 1; i < nodes.length; i++) {
+        if (nodeTag(nodes[i]) === 'h2') {
+            nextH2Index = i;
+            break;
+        }
+    }
+
+    const faqBodyNodes = nodes.slice(faqH2Index + 1, nextH2Index);
+    const afterH2Nodes = nodes.slice(nextH2Index);
+
+    // Parse into FAQ items; an <hr> ends the item stream (trailing CTA paragraph)
+    const items = [];
+    const trailingNodes = [];
+    let currentItem = null;
+    let hitHr = false;
+
+    for (const node of faqBodyNodes) {
+        if (hitHr) {
+            trailingNodes.push(node);
+            continue;
+        }
+        if (nodeTag(node) === 'hr') {
+            hitHr = true;
+            if (currentItem) {
+                items.push(currentItem);
+                currentItem = null;
+            }
+            continue;
+        }
+        if (nodeTag(node) === 'h3') {
+            if (currentItem) items.push(currentItem);
+            currentItem = {
+                question: extractText(node),
+                id: (node[1] && node[1].id) || null,
+                answerNodes: [],
+            };
+        } else if (currentItem) {
+            currentItem.answerNodes.push(node);
+        }
+    }
+    if (currentItem) items.push(currentItem);
+    if (items.length === 0) return null;
+
+    return {
+        title: faqTitle,
+        id: faqId,
+        items,
+        beforeNodes: nodes.slice(0, faqH2Index),
+        afterNodes: [...trailingNodes, ...afterH2Nodes],
+    };
 });
+
+// Partial content objects for ContentRenderer — same shape as data but with
+// a subset of body.value so the prose styles and component context stay intact.
+const beforeFaqContent = computed(() =>
+    faqData.value
+        ? {
+              ...data.value,
+              body: {
+                  ...data.value.body,
+                  value: faqData.value.beforeNodes,
+              },
+          }
+        : null,
+);
+
+const afterFaqContent = computed(() =>
+    faqData.value?.afterNodes?.length
+        ? {
+              ...data.value,
+              body: {
+                  ...data.value.body,
+                  value: faqData.value.afterNodes,
+              },
+          }
+        : null,
+);
+
+// ── Structured data ────────────────────────────────────────────────────────────
+const ldScripts = [
+    {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: data.value?.title,
+            description: data.value?.description,
+            author: {
+                '@type': 'Organization',
+                name: 'Deskundigen Directory',
+                url: 'https://deskundigewijzer.nl',
+            },
+            publisher: {
+                '@type': 'Organization',
+                name: 'Deskundigen Directory',
+                url: 'https://deskundigewijzer.nl',
+                logo: {
+                    '@type': 'ImageObject',
+                    url: 'https://deskundigewijzer.nl/logo.png',
+                },
+            },
+            datePublished: data.value?.date,
+            dateModified: data.value?.date,
+            mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `https://deskundigewijzer.nl/blog/${params.slug}`,
+            },
+            keywords: data.value?.tags?.join(', '),
+            articleSection: 'Juridische expertise',
+            inLanguage: 'nl-NL',
+        }),
+    },
+    {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Home',
+                    item: 'https://deskundigewijzer.nl',
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: 'Blog',
+                    item: 'https://deskundigewijzer.nl/blog',
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 3,
+                    name: data.value?.title,
+                    item: `https://deskundigewijzer.nl/blog/${params.slug}`,
+                },
+            ],
+        }),
+    },
+];
+
+if (faqData.value) {
+    ldScripts.push({
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqData.value.items.map((item) => ({
+                '@type': 'Question',
+                name: item.question,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: extractAllText(item.answerNodes),
+                },
+            })),
+        }),
+    });
+}
+
+useHead({ script: ldScripts });
 </script>
 
 <style scoped>

@@ -153,19 +153,12 @@
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
 
-useHead({
-  title: 'Vind een gerechtelijk deskundige | Deskundigewijzer',
-});
-
 useSeoMeta({
-  title: 'Vind een gerechtelijk deskundige | Deskundigewijzer',
-  description:
-    'Op zoek naar een gecertificeerde gerechtelijk deskundige? Wij bouwen het Nederlandse netwerk uit ' +
-    'van medische, bouwkundige, financiële, forensische en IT-deskundigen. Neem rechtstreeks contact op.',
-  ogTitle: 'Vind een gerechtelijk deskundige | Deskundigewijzer',
-  ogDescription:
-    'Gecertificeerde gerechtelijk deskundigen in Nederland — ons netwerk in opbouw. Neem contact op voor een match.',
-  ogType: 'website',
+    title: 'Gerechtelijk Deskundigen vinden | Deskundigewijzer',
+    description: 'Zoek gecertificeerde gerechtelijk deskundigen in Nederland. Medisch, bouwkundig, financieel, forensisch en IT-deskundigen. Neem direct contact op voor een match op uw zaak.',
+    ogTitle: 'Gerechtelijk Deskundigen vinden | Deskundigewijzer',
+    ogDescription: 'Gecertificeerde gerechtelijk deskundigen in Nederland — medisch, bouwkundig, financieel, forensisch en IT. Neem contact op voor een match op uw zaak.',
+    ogType: 'website',
 });
 
 const honeypot = ref('');

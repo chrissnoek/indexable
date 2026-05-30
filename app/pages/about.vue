@@ -44,13 +44,11 @@
 </template>
 
 <script setup>
-useHead({
-  title: 'Over Ons | Deskundigen Directory',
-  meta: [
-    {
-      name: 'description',
-      content: 'Leer meer over Deskundigen Directory, het platform voor het vinden van juridische deskundigen in Nederland.'
-    }
-  ]
+useSeoMeta({
+    title: 'Over Deskundigewijzer | Gerechtelijk Deskundigenplatform Nederland',
+    description: 'Leer meer over Deskundigewijzer — het onafhankelijke register voor gecertificeerde gerechtelijk deskundigen in Nederland, voor rechtbanken, advocaten en partijen.',
+    ogTitle: 'Over Deskundigewijzer | Gerechtelijk Deskundigenplatform',
+    ogDescription: 'Deskundigewijzer is het onafhankelijke platform voor gecertificeerde gerechtelijk deskundigen in Nederland.',
+    ogType: 'website',
 })
 </script>
