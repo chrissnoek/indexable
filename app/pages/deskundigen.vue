@@ -1,119 +1,152 @@
 <template>
-  <div class="min-h-screen bg-slate-100">
-    <Header />
+    <div>
+        <Header />
 
-    <main>
-      <!-- Hero -->
-      <section class="relative overflow-hidden bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
-          <span class="inline-block bg-cyan-100 text-cyan-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-            Binnenkort beschikbaar
-          </span>
-          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Vind de juiste deskundige voor uw zaak
-          </h1>
-          <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Wij bouwen op dit moment ons netwerk uit van gecertificeerde gerechtelijk deskundigen
-            in heel Nederland — medisch, bouwkundig, financieel, forensisch en IT.
-            Heeft u nu al een deskundige nodig voor uw zaak? Neem rechtstreeks contact met ons op.
-          </p>
+        <main>
+            <!-- Hero -->
+            <section class="disc-hero">
+                <div class="wrap wrap--narrow">
+                    <span class="notice-tag">Binnenkort beschikbaar</span>
+                    <h1 class="text-display disc-hero__title">
+                        Vind de juiste deskundige voor uw zaak
+                    </h1>
+                    <p class="lede disc-hero__lede">
+                        Wij bouwen op dit moment ons netwerk uit van
+                        gecertificeerde gerechtelijk deskundigen in heel
+                        Nederland — medisch, bouwkundig, financieel, forensisch
+                        en IT. Heeft u nu al een deskundige nodig voor uw zaak?
+                        Neem rechtstreeks contact met ons op.
+                    </p>
 
-          <!-- Spam-proof email CTA -->
-          <button
-            @click="sendEmail"
-            class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-700 hover:bg-cyan-800 text-white text-lg font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            <span>Stuur ons uw vraag</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </button>
+                    <!-- Spam-proof email CTA -->
+                    <button
+                        class="btn btn--primary btn--lg"
+                        @click="sendEmail"
+                    >
+                        <span class="btn__label">
+                            Stuur ons uw vraag
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </span>
+                    </button>
 
-          <p class="text-sm text-gray-500 mt-4">
-            We reageren binnen één werkdag.
-          </p>
+                    <p class="disc-hero__note">
+                        We reageren binnen één werkdag.
+                    </p>
 
-          <!-- Honeypot: invisible field. Bots fill it; humans don't. -->
-          <input
-            v-model="honeypot"
-            type="text"
-            name="website"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-            class="absolute opacity-0 pointer-events-none -z-10 left-[-9999px]"
-          />
-        </div>
-      </section>
+                    <!-- Honeypot: invisible field. Bots fill it; humans don't. -->
+                    <input
+                        v-model="honeypot"
+                        type="text"
+                        name="website"
+                        tabindex="-1"
+                        autocomplete="off"
+                        aria-hidden="true"
+                        class="absolute opacity-0 pointer-events-none -z-10 left-[-9999px]"
+                    />
+                </div>
+            </section>
 
-      <!-- Categories preview -->
-      <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-14">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Vakgebieden die wij dekken
-            </h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-              Ons netwerk omvat gecertificeerde deskundigen in vijf hoofdgebieden.
-            </p>
-          </div>
+            <!-- Categories preview -->
+            <section class="section section--paper-warm">
+                <div class="wrap">
+                    <div class="section-head section-head--center">
+                        <p class="eyebrow">Netwerk in opbouw</p>
+                        <h2 class="text-h1">Vakgebieden die wij dekken</h2>
+                        <p class="lede">
+                            Ons netwerk omvat gecertificeerde deskundigen in vijf
+                            hoofdgebieden.
+                        </p>
+                    </div>
+                    <hr class="rule" style="margin: 2.5rem 0" />
 
-          <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-            <div
-              v-for="category in categories"
-              :key="category.id"
-              class="p-6 bg-white rounded-2xl border-2 border-gray-100 text-center"
-            >
-              <div class="text-5xl mb-3">{{ category.icon }}</div>
-              <div class="font-bold text-gray-900">{{ category.name }}</div>
-              <div class="text-sm text-gray-500 mt-2">{{ category.description }}</div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    <div class="fieldgrid">
+                        <div
+                            v-for="category in categories"
+                            :key="category.id"
+                            class="fieldcard"
+                        >
+                            <div class="fieldcard__icon" aria-hidden="true">
+                                {{ category.icon }}
+                            </div>
+                            <div class="fieldcard__name">
+                                {{ category.name }}
+                            </div>
+                            <div class="fieldcard__desc">
+                                {{ category.description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <!-- What to include -->
-      <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Wat heeft u nodig in uw bericht?
-            </h2>
-            <p class="text-gray-600 text-lg">
-              Hoe gerichter uw vraag, hoe sneller wij u kunnen helpen.
-            </p>
-          </div>
+            <!-- What to include -->
+            <section class="section">
+                <div class="wrap wrap--mid">
+                    <div class="section-head section-head--center">
+                        <p class="eyebrow">Uw aanvraag</p>
+                        <h2 class="text-h1">Wat heeft u nodig in uw bericht?</h2>
+                        <p class="lede">
+                            Hoe gerichter uw vraag, hoe sneller wij u kunnen
+                            helpen.
+                        </p>
+                    </div>
+                    <hr class="rule" style="margin: 2.5rem 0" />
 
-          <ul class="space-y-4">
-            <li
-              v-for="item in checklist"
-              :key="item"
-              class="flex items-start gap-4 bg-slate-50 p-5 rounded-xl"
-            >
-              <span class="flex-shrink-0 w-7 h-7 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">✓</span>
-              <span class="text-gray-700 text-lg leading-relaxed">{{ item }}</span>
-            </li>
-          </ul>
+                    <ul class="req-list">
+                        <li
+                            v-for="item in checklist"
+                            :key="item"
+                            class="req-item"
+                        >
+                            <span
+                                class="req-item__num"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="req-item__text">{{ item }}</span>
+                        </li>
+                    </ul>
 
-          <div class="text-center mt-12">
-            <button
-              @click="sendEmail"
-              class="inline-flex items-center gap-2 px-8 py-4 bg-cyan-700 hover:bg-cyan-800 text-white text-lg font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              <span>Neem nu contact op</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
+                    <div class="disc-cta">
+                        <button
+                            class="btn btn--primary btn--lg"
+                            @click="sendEmail"
+                        >
+                            <span class="btn__label">
+                                Neem nu contact op
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-    <Footer />
-  </div>
+        <Footer />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -175,5 +208,124 @@ const checklist = [
 </script>
 
 <style scoped>
-@reference "tailwindcss";
+.disc-hero {
+    text-align: center;
+    padding-block: clamp(3.5rem, 2rem + 7vw, 7rem);
+    border-bottom: 1px solid var(--rule);
+}
+.notice-tag {
+    display: inline-block;
+    font-size: var(--text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: var(--accent-deep);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.85rem;
+    margin-bottom: 1.5rem;
+}
+.disc-hero__title {
+    margin: 0 auto;
+    max-width: 18ch;
+}
+.disc-hero__lede {
+    margin: 1.5rem auto 2.25rem;
+    max-width: 60ch;
+}
+.disc-hero__note {
+    margin-top: 1rem;
+    font-size: var(--text-small);
+    color: var(--muted);
+}
+.btn__label svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Vakgebieden grid */
+.fieldgrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+.fieldcard {
+    text-align: center;
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 1rem + 1vw, 1.85rem);
+    transition: border-color var(--dur) var(--ease),
+        transform var(--dur) var(--ease);
+}
+.fieldcard:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+.fieldcard__icon {
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+.fieldcard__name {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: var(--text-h3);
+    color: var(--ink);
+}
+.fieldcard__desc {
+    margin-top: 0.5rem;
+    font-size: var(--text-small);
+    color: var(--muted);
+}
+
+/* Checklist */
+.req-list {
+    counter-reset: req;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 64ch;
+}
+.req-item {
+    counter-increment: req;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+.req-item:last-child {
+    border-bottom: 0;
+}
+.req-item__num {
+    flex-shrink: 0;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1.55;
+}
+.req-item__num::before {
+    content: counter(req, decimal-leading-zero);
+}
+.req-item__text {
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+.disc-cta {
+    text-align: center;
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media (max-width: 1024px) {
+    .fieldgrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 560px) {
+    .fieldgrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 </style>

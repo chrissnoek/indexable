@@ -1,306 +1,343 @@
 <template>
-    <div class="min-h-screen bg-gray-50">
-        <!-- Header -->
-    <Header />
+    <div>
+        <Header />
 
         <!-- Success Message -->
-        <div
-            v-if="submitted"
-            class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
-        >
-            <div class="bg-white rounded-lg shadow-sm p-8 text-center">
-                <div class="text-green-500 mb-4">
-                    <svg
-                        class="mx-auto h-16 w-16"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+        <section v-if="submitted" class="section">
+            <div class="wrap wrap--narrow">
+                <div class="panel success-panel">
+                    <div class="success-icon" aria-hidden="true">
+                        <svg
+                            width="56"
+                            height="56"
+                            fill="none"
+                            stroke="currentColor"
                             stroke-width="2"
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
-                </div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">
-                    {{ $t('submit.successTitle') }}
-                </h2>
-                <p class="text-gray-600 mb-6">
-                    {{ $t('submit.successMessage') }}
-                </p>
-                <div class="space-y-3">
-                    <p class="text-sm text-gray-500">
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                    </div>
+                    <h2 class="text-h2" style="margin-top: 0.25rem">
+                        {{ $t('submit.successTitle') }}
+                    </h2>
+                    <p
+                        class="lede"
+                        style="margin: 1rem auto 1.5rem; max-width: 46ch"
+                    >
+                        {{ $t('submit.successMessage') }}
+                    </p>
+                    <p class="success-note">
                         {{ $t('submit.emailConfirmation') }}
                         <strong>{{ form.email }}</strong>
                         {{ $t('submit.onceApproved') }}
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <NuxtLink
-                            to="/"
-                            class="bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-700"
-                        >
-                            {{ $t('submit.backToHome') }}
+                    <div class="success-actions">
+                        <NuxtLink to="/" class="btn btn--primary">
+                            <span class="btn__label">{{
+                                $t('submit.backToHome')
+                            }}</span>
                         </NuxtLink>
-                        <NuxtLink
-                            to="/search"
-                            class="bg-gray-100 text-gray-900 px-6 py-2 rounded-lg hover:bg-gray-200"
-                        >
-                            {{ $t('submit.browseExperts') }}
+                        <NuxtLink to="/search" class="btn btn--ghost-ink">
+                            <span class="btn__label">{{
+                                $t('submit.browseExperts')
+                            }}</span>
                         </NuxtLink>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Form -->
-        <div v-else class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="bg-white rounded-lg shadow-sm p-8">
-                <div class="mb-8">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-4">
+        <section v-else class="section">
+            <div class="wrap wrap--mid">
+                <div class="submit-head">
+                    <p class="eyebrow">{{ $t('home.navigation.submit') }}</p>
+                    <h1 class="text-h1" style="margin-top: 1rem">
                         {{ $t('submit.title') }}
                     </h1>
-                    <p class="text-gray-600">
+                    <p class="lede" style="margin-top: 1rem; max-width: 60ch">
                         {{ $t('submit.description') }}
                     </p>
                 </div>
 
-                <form @submit.prevent="submitForm" class="space-y-6">
-                    <!-- Business Information -->
-                    <div>
-                        <h2 class="text-xl font-semibold text-gray-900 mb-4">
-                            {{ $t('submit.sections.personal') }}
-                        </h2>
-                        <div class="grid grid-cols-1 gap-6">
-                            <div>
-                                <label
-                                    for="name"
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    {{ $t('submit.form.firstName') }}
-                                </label>
-                                <input
-                                    id="name"
-                                    v-model="form.name"
-                                    type="text"
-                                    required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    :placeholder="
-                                        $t('submit.form.firstNamePlaceholder')
-                                    "
-                                />
-                            </div>
+                <div class="panel">
+                    <form
+                        class="submit-form"
+                        name="expert-submission"
+                        method="POST"
+                        netlify
+                        @submit.prevent="submitForm"
+                    >
+                        <input
+                            type="hidden"
+                            name="form-name"
+                            value="expert-submission"
+                        />
+                        <!-- Personal / expertise -->
+                        <fieldset class="form-section">
+                            <h2 class="form-section__title">
+                                {{ $t('submit.sections.personal') }}
+                            </h2>
+                            <hr class="rule" />
+                            <div class="form-rows">
+                                <div class="field field--full">
+                                    <label for="name" class="field__label">{{
+                                        $t('submit.form.firstName')
+                                    }}</label>
+                                    <input
+                                        id="name"
+                                        v-model="form.name"
+                                        type="text"
+                                        required
+                                        class="input"
+                                        :placeholder="
+                                            $t('submit.form.firstNamePlaceholder')
+                                        "
+                                    />
+                                </div>
 
-                            <div>
-                                <label
-                                    for="description"
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    {{ $t('submit.form.bio') }}
-                                </label>
-                                <textarea
-                                    id="description"
-                                    v-model="form.description"
-                                    required
-                                    rows="4"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    :placeholder="
-                                        $t('submit.form.bioPlaceholder')
-                                    "
-                                ></textarea>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
+                                <div class="field field--full">
                                     <label
-                                        for="type"
-                                        class="block text-sm font-medium text-gray-700 mb-2"
+                                        for="description"
+                                        class="field__label"
+                                        >{{ $t('submit.form.bio') }}</label
                                     >
-                                        {{ $t('submit.form.mainExpertise') }}
-                                    </label>
+                                    <textarea
+                                        id="description"
+                                        v-model="form.description"
+                                        required
+                                        rows="4"
+                                        class="textarea"
+                                        :placeholder="
+                                            $t('submit.form.bioPlaceholder')
+                                        "
+                                    ></textarea>
+                                </div>
+
+                                <div class="field">
+                                    <label for="type" class="field__label">{{
+                                        $t('submit.form.mainExpertise')
+                                    }}</label>
                                     <select
                                         id="type"
                                         v-model="form.type"
                                         required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        class="select"
                                     >
                                         <option value="">
-                                            {{ $t('submit.form.selectMainExpertise') }}
+                                            {{
+                                                $t(
+                                                    'submit.form.selectMainExpertise'
+                                                )
+                                            }}
                                         </option>
                                         <option value="medical">
-                                            {{ $t('search.filters.expertise.medical') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.expertise.medical'
+                                                )
+                                            }}
                                         </option>
                                         <option value="construction">
-                                            {{ $t('search.filters.expertise.construction') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.expertise.construction'
+                                                )
+                                            }}
                                         </option>
                                         <option value="financial">
-                                            {{ $t('search.filters.expertise.financial') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.expertise.financial'
+                                                )
+                                            }}
                                         </option>
                                         <option value="forensic">
-                                            {{ $t('search.filters.expertise.forensic') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.expertise.forensic'
+                                                )
+                                            }}
                                         </option>
                                         <option value="it">
-                                            {{ $t('search.filters.expertise.it') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.expertise.it'
+                                                )
+                                            }}
                                         </option>
                                     </select>
                                 </div>
 
-                                <div>
+                                <div class="field">
                                     <label
                                         for="ageGroup"
-                                        class="block text-sm font-medium text-gray-700 mb-2"
+                                        class="field__label"
+                                        >{{
+                                            $t('submit.form.yearsExperience')
+                                        }}</label
                                     >
-                                        {{ $t('submit.form.yearsExperience') }}
-                                    </label>
                                     <select
                                         id="ageGroup"
                                         v-model="form.ageGroup"
                                         required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        class="select"
                                     >
                                         <option value="">
-                                            {{ $t('search.filters.experience.all') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.experience.all'
+                                                )
+                                            }}
                                         </option>
                                         <option value="0-5">
-                                            {{ $t('search.filters.experience.junior') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.experience.junior'
+                                                )
+                                            }}
                                         </option>
                                         <option value="5-10">
-                                            {{ $t('search.filters.experience.medior') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.experience.medior'
+                                                )
+                                            }}
                                         </option>
                                         <option value="10-20">
-                                            {{ $t('search.filters.experience.senior') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.experience.senior'
+                                                )
+                                            }}
                                         </option>
                                         <option value="20+">
-                                            {{ $t('search.filters.experience.expert') }}
+                                            {{
+                                                $t(
+                                                    'search.filters.experience.expert'
+                                                )
+                                            }}
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </fieldset>
 
-                    <!-- Contact Information -->
-                    <div>
-                        <h2 class="text-xl font-semibold text-gray-900 mb-4">
-                            {{ $t('submit.contactInformation') }}
-                        </h2>
-                        <div class="grid grid-cols-1 gap-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label
-                                        for="phone"
-                                        class="block text-sm font-medium text-gray-700 mb-2"
-                                    >
-                                        {{ $t('form.phone') }}
-                                    </label>
+                        <!-- Contact -->
+                        <fieldset class="form-section">
+                            <h2 class="form-section__title">
+                                {{ $t('submit.contactInformation') }}
+                            </h2>
+                            <hr class="rule" />
+                            <div class="form-rows">
+                                <div class="field">
+                                    <label for="phone" class="field__label">{{
+                                        $t('form.phone')
+                                    }}</label>
                                     <input
                                         id="phone"
                                         v-model="form.phone"
                                         type="tel"
                                         required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        class="input"
                                         :placeholder="
                                             $t('form.phonePlaceholder')
                                         "
                                     />
                                 </div>
 
-                                <div>
-                                    <label
-                                        for="email"
-                                        class="block text-sm font-medium text-gray-700 mb-2"
-                                    >
-                                        {{ $t('form.email') }}
-                                    </label>
+                                <div class="field">
+                                    <label for="email" class="field__label">{{
+                                        $t('form.email')
+                                    }}</label>
                                     <input
                                         id="email"
                                         v-model="form.email"
                                         type="email"
                                         required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        class="input"
                                         :placeholder="
                                             $t('form.emailPlaceholder')
                                         "
                                     />
                                 </div>
-                            </div>
 
-                            <div>
-                                <label
-                                    for="website"
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    {{ $t('form.website') }}
-                                </label>
-                                <input
-                                    id="website"
-                                    v-model="form.website"
-                                    type="url"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    :placeholder="$t('form.websitePlaceholder')"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Address Information -->
-                    <div>
-                        <h2 class="text-xl font-semibold text-gray-900 mb-4">
-                            {{ $t('submit.address') }}
-                        </h2>
-                        <div class="grid grid-cols-1 gap-6">
-                            <div>
-                                <label
-                                    for="address"
-                                    class="block text-sm font-medium text-gray-700 mb-2"
-                                >
-                                    {{ $t('form.streetAddress') }}
-                                </label>
-                                <input
-                                    id="address"
-                                    v-model="form.address"
-                                    type="text"
-                                    required
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                    :placeholder="
-                                        $t('form.streetAddressPlaceholder')
-                                    "
-                                />
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
+                                <div class="field field--full">
                                     <label
-                                        for="city"
-                                        class="block text-sm font-medium text-gray-700 mb-2"
+                                        for="website"
+                                        class="field__label"
+                                        >{{ $t('form.website') }}</label
                                     >
-                                        {{ $t('form.city') }}
-                                    </label>
+                                    <input
+                                        id="website"
+                                        v-model="form.website"
+                                        type="url"
+                                        class="input"
+                                        :placeholder="
+                                            $t('form.websitePlaceholder')
+                                        "
+                                    />
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Address -->
+                        <fieldset class="form-section">
+                            <h2 class="form-section__title">
+                                {{ $t('submit.address') }}
+                            </h2>
+                            <hr class="rule" />
+                            <div class="form-rows">
+                                <div class="field field--full">
+                                    <label
+                                        for="address"
+                                        class="field__label"
+                                        >{{ $t('form.streetAddress') }}</label
+                                    >
+                                    <input
+                                        id="address"
+                                        v-model="form.address"
+                                        type="text"
+                                        required
+                                        class="input"
+                                        :placeholder="
+                                            $t('form.streetAddressPlaceholder')
+                                        "
+                                    />
+                                </div>
+
+                                <div class="field">
+                                    <label for="city" class="field__label">{{
+                                        $t('form.city')
+                                    }}</label>
                                     <input
                                         id="city"
                                         v-model="form.city"
                                         type="text"
                                         required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        class="input"
                                         :placeholder="
                                             $t('form.cityPlaceholder')
                                         "
                                     />
                                 </div>
 
-                                <div>
+                                <div class="field">
                                     <label
                                         for="country"
-                                        class="block text-sm font-medium text-gray-700 mb-2"
+                                        class="field__label"
+                                        >{{ $t('form.country') }}</label
                                     >
-                                        {{ $t('form.country') }}
-                                    </label>
                                     <select
                                         id="country"
                                         v-model="form.country"
                                         required
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        class="select"
                                     >
                                         <option value="">
                                             {{ $t('form.selectCountry') }}
@@ -317,73 +354,51 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </fieldset>
 
-                    <!-- Terms and Submit -->
-                    <div class="border-t pt-6">
-                        <div class="flex items-start mb-6">
-                            <input
-                                id="terms"
-                                v-model="acceptTerms"
-                                type="checkbox"
-                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                            />
-                            <label
-                                for="terms"
-                                class="ml-2 block text-sm text-gray-700"
-                            >
-                                {{ $t('submit.terms.accept') }}
-                                <a
-                                    href="#"
-                                    class="text-cyan-600 hover:text-cyan-700"
-                                    >{{ $t('submit.terms.termsOfService') }}</a
-                                >
-                                {{ $t('submit.terms.and') }}
-                                <a
-                                    href="#"
-                                    class="text-cyan-600 hover:text-cyan-700"
-                                    >{{ $t('submit.terms.privacyPolicy') }}</a
-                                >{{ $t('submit.terms.reviewMessage') }}
+                        <!-- Terms and Submit -->
+                        <div class="form-section form-section--flush">
+                            <hr class="rule" />
+                            <label for="terms" class="terms">
+                                <input
+                                    id="terms"
+                                    v-model="acceptTerms"
+                                    type="checkbox"
+                                />
+                                <span>
+                                    {{ $t('submit.terms.accept') }}
+                                    <a href="#">{{
+                                        $t('submit.terms.termsOfService')
+                                    }}</a>
+                                    {{ $t('submit.terms.and') }}
+                                    <a href="#">{{
+                                        $t('submit.terms.privacyPolicy')
+                                    }}</a
+                                    >{{ $t('submit.terms.reviewMessage') }}
+                                </span>
                             </label>
-                        </div>
 
-                        <button
-                            type="submit"
-                            :disabled="loading || !acceptTerms"
-                            class="w-full bg-cyan-600 text-white py-3 px-4 rounded-lg hover:bg-cyan-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-                        >
-                            <span
-                                v-if="loading"
-                                class="flex items-center justify-center"
+                            <button
+                                type="submit"
+                                :disabled="loading || !acceptTerms"
+                                class="btn btn--primary btn--lg btn--block"
                             >
-                                <svg
-                                    class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <circle
-                                        class="opacity-25"
-                                        cx="12"
-                                        cy="12"
-                                        r="10"
-                                        stroke="currentColor"
-                                        stroke-width="4"
-                                    ></circle>
-                                    <path
-                                        class="opacity-75"
-                                        fill="currentColor"
-                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                    ></path>
-                                </svg>
-                                {{ $t('submit.submitting') }}
-                            </span>
-                            <span v-else>{{ $t('submit.submit') }}</span>
-                        </button>
-                    </div>
-                </form>
+                                <span v-if="loading" class="btn__label">
+                                    <span
+                                        class="btn-spinner"
+                                        aria-hidden="true"
+                                    ></span>
+                                    {{ $t('submit.submitting') }}
+                                </span>
+                                <span v-else class="btn__label">{{
+                                    $t('submit.submit')
+                                }}</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </template>
 
@@ -419,14 +434,24 @@ const submitForm = async () => {
     error.value = null;
 
     try {
-        await $fetch('http://localhost:8000/api/companies', {
+        const formData = new FormData();
+        formData.append('form-name', 'expert-submission');
+        Object.entries(form).forEach(([key, value]) => {
+            formData.append(key, value as string);
+        });
+        formData.append('acceptTerms', acceptTerms.value ? 'yes' : 'no');
+
+        await fetch('/', {
             method: 'POST',
-            body: form,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(
+                Object.fromEntries(formData) as Record<string, string>
+            ),
         });
 
         submitted.value = true;
     } catch (err: any) {
-        error.value = err.data?.message || $t('submit.validation.submitError');
+        error.value = $t('submit.validation.submitError');
         console.error('Submission error:', err);
     } finally {
         loading.value = false;
@@ -446,5 +471,101 @@ useHead({
 </script>
 
 <style scoped>
-/* Additional styles if needed */
+.submit-head {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.form-section {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+.form-section:first-of-type {
+    margin-top: 0;
+}
+.form-section__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    margin-bottom: 0;
+}
+.form-section .rule {
+    margin: 0.9rem 0 1.75rem;
+}
+.form-section--flush .rule {
+    margin: 0 0 1.75rem;
+}
+
+.form-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.field--full {
+    grid-column: 1 / -1;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    margin-bottom: 1.75rem;
+    font-size: var(--text-small);
+    color: var(--ink-soft);
+    line-height: 1.55;
+    cursor: pointer;
+}
+.terms input {
+    margin-top: 0.15rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+}
+.terms a {
+    color: var(--accent-deep);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.btn-spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+}
+
+/* Success */
+.success-panel {
+    text-align: center;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+.success-icon {
+    color: var(--accent);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+.success-note {
+    font-size: var(--text-small);
+    color: var(--muted);
+    max-width: 44ch;
+    margin: 0 auto;
+}
+.success-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
+@media (max-width: 560px) {
+    .form-rows {
+        grid-template-columns: 1fr;
+    }
+}
 </style>

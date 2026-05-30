@@ -56,156 +56,94 @@
             />
         </Head>
 
-        <div class="min-h-screen bg-gray-50">
-            <Header />
+        <Header />
 
-            <nav
-                aria-label="Breadcrumb"
-                class="bg-white border-b border-gray-200"
-            >
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <ol class="flex items-center space-x-2 text-sm">
-                        <li>
-                            <NuxtLink
-                                to="/"
-                                class="text-gray-500 hover:text-gray-700"
-                                >{{ $t('blog.breadcrumbs.home') }}</NuxtLink
-                            >
-                        </li>
-                        <li class="text-gray-400">›</li>
-                        <li>
-                            <NuxtLink
-                                to="/blog"
-                                class="text-gray-500 hover:text-gray-700"
-                                >{{ $t('blog.breadcrumbs.blog') }}</NuxtLink
-                            >
-                        </li>
-                        <li class="text-gray-400">›</li>
-                        <li class="text-gray-900 font-medium truncate">
-                            {{ data?.title }}
-                        </li>
-                    </ol>
-                </div>
-            </nav>
+        <nav aria-label="Breadcrumb" class="article-crumbs">
+            <div class="wrap wrap--narrow">
+                <ol class="crumbs">
+                    <li>
+                        <NuxtLink to="/" class="crumbs__link">{{
+                            $t('blog.breadcrumbs.home')
+                        }}</NuxtLink>
+                    </li>
+                    <li class="crumbs__sep" aria-hidden="true">/</li>
+                    <li>
+                        <NuxtLink to="/blog" class="crumbs__link">{{
+                            $t('blog.breadcrumbs.blog')
+                        }}</NuxtLink>
+                    </li>
+                    <li class="crumbs__sep" aria-hidden="true">/</li>
+                    <li class="crumbs__current">{{ data?.title }}</li>
+                </ol>
+            </div>
+        </nav>
 
-            <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main class="section section--tight">
+            <div class="wrap wrap--narrow">
                 <article>
-                    <header class="mb-8">
-                        <div class="mb-4">
-                            <div
-                                v-if="data?.tags"
-                                class="flex flex-wrap gap-2 mb-4"
+                    <header class="article-head">
+                        <div v-if="data?.tags" class="article-head__tags">
+                            <span
+                                v-for="tag in data.tags"
+                                :key="tag"
+                                class="tag tag--ghost"
                             >
-                                <span
-                                    v-for="tag in data.tags"
-                                    :key="tag"
-                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
-                                >
-                                    {{ tag }}
-                                </span>
-                            </div>
-
-                            <h1
-                                class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
-                            >
-                                {{ data?.title }}
-                            </h1>
-
-                            <div
-                                class="flex items-center text-sm text-gray-500 space-x-4"
-                            >
-                                <time
-                                    :datetime="data?.date"
-                                    class="flex items-center"
-                                >
-                                    <svg
-                                        class="w-4 h-4 mr-2"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                        ></path>
-                                    </svg>
-                                    {{ formatDate(data?.date) }}
-                                </time>
-                                <span class="flex items-center">
-                                    <svg
-                                        class="w-4 h-4 mr-2"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                                        ></path>
-                                    </svg>
-                                    {{ readingTime(data?.body?.children) }}
-                                    {{ $t('blog.post.readingTime') }}
-                                </span>
-                            </div>
-
-                            <p
-                                v-if="data?.description"
-                                class="mt-6 text-xl text-gray-600 leading-relaxed"
-                            >
-                                {{ data.description }}
-                            </p>
-
-                            <img
-                                v-if="showImage"
-                                :src="imageSrc"
-                                :alt="data?.title"
-                                class="mt-8 w-full max-w-2xl mx-auto rounded-lg shadow-lg max-h-[290px] object-cover"
-                                @error="showImage = false"
-                            />
+                                {{ tag }}
+                            </span>
                         </div>
+
+                        <h1 class="text-display article-title">
+                            {{ data?.title }}
+                        </h1>
+
+                        <div class="article-meta">
+                            <time :datetime="data?.date">{{
+                                formatDate(data?.date)
+                            }}</time>
+                            <span class="article-meta__dot" aria-hidden="true"
+                                >·</span
+                            >
+                            <span
+                                >{{ readingTime(data?.body?.children) }}
+                                {{ $t('blog.post.readingTime') }}</span
+                            >
+                        </div>
+
+                        <p v-if="data?.description" class="lede article-lede">
+                            {{ data.description }}
+                        </p>
+
+                        <img
+                            v-if="showImage"
+                            :src="imageSrc"
+                            :alt="data?.title"
+                            class="article-cover"
+                            @error="showImage = false"
+                        />
                     </header>
 
                     <aside
                         v-if="data?.body?.toc?.links?.length"
-                        class="mb-8 bg-gray-50 rounded-lg p-6 border border-gray-200"
+                        class="toc"
                     >
-                        <h2
-                            class="text-lg font-semibold text-gray-900 mb-4 flex items-center"
-                        >
-                            <svg
-                                class="w-5 h-5 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M4 6h16M4 10h16M4 14h16M4 18h16"
-                                ></path>
-                            </svg>
+                        <h2 class="toc__title">
                             {{ $t('blog.post.tableOfContents') }}
                         </h2>
                         <nav>
-                            <ul class="space-y-2">
+                            <ul class="toc__list">
                                 <li
                                     v-for="link in data.body.toc.links"
                                     :key="link.id"
                                 >
                                     <a
                                         :href="`#${link.id}`"
-                                        class="text-cyan-600 hover:text-cyan-700 hover:underline text-sm font-medium block py-1"
+                                        class="toc__link"
                                     >
                                         {{ link.text }}
                                     </a>
                                     <ul
                                         v-if="link.children?.length"
-                                        class="ml-4 mt-1 space-y-1"
+                                        class="toc__sub"
                                     >
                                         <li
                                             v-for="child in link.children"
@@ -213,7 +151,7 @@
                                         >
                                             <a
                                                 :href="`#${child.id}`"
-                                                class="text-gray-600 hover:text-cyan-600 hover:underline text-sm block py-0.5"
+                                                class="toc__link toc__link--sub"
                                             >
                                                 {{ child.text }}
                                             </a>
@@ -224,100 +162,67 @@
                         </nav>
                     </aside>
 
-                    <div class="prose prose-lg prose-blue max-w-none">
-                        <div
-                            class="prose-headings:font-bold prose-headings:text-gray-900 prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-strong:text-gray-900 prose-strong:font-semibold prose-ul:my-6 prose-li:mb-2 prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:text-cyan-700"
-                        >
-                            <ContentRenderer :value="data" />
-                        </div>
+                    <div class="prose-editorial article-body">
+                        <ContentRenderer :value="data" />
                     </div>
 
-                    <footer class="mt-12 pt-8 border-t border-gray-200">
-                        <div class="bg-blue-50 rounded-lg p-6">
-                            <h3
-                                class="text-lg font-semibold text-gray-900 mb-2"
-                            >
+                    <footer class="article-footer">
+                        <div class="panel cta-panel">
+                            <h3 class="cta-panel__title">
                                 {{ $t('blog.cta.title') }}
                             </h3>
-                            <p class="text-gray-700 mb-4">
+                            <p class="cta-panel__desc">
                                 {{ $t('blog.cta.description') }}
                             </p>
-                            <NuxtLink
-                                to="/search"
-                                class="inline-flex items-center px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-lg transition-colors"
-                            >
-                                <svg
-                                    class="w-5 h-5 mr-2"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                    ></path>
-                                </svg>
-                                {{ $t('blog.cta.button') }}
+                            <NuxtLink to="/search" class="btn btn--primary">
+                                <span class="btn__label">{{
+                                    $t('blog.cta.button')
+                                }}</span>
                             </NuxtLink>
                         </div>
                     </footer>
                 </article>
 
-                <aside class="mt-16">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-8">
+                <aside class="related">
+                    <h2 class="text-h2 related__title">
                         {{ $t('blog.post.relatedArticles') }}
                     </h2>
-                    <div class="grid md:grid-cols-2 gap-8">
+                    <div class="related-grid">
                         <article
                             v-for="relatedPost in relatedPosts"
                             :key="relatedPost.path"
-                            class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
+                            class="related-card"
                         >
-                            <div class="p-6">
-                                <div
-                                    class="flex items-center text-sm text-gray-500 mb-3"
+                            <time
+                                :datetime="relatedPost.date"
+                                class="related-card__date"
+                            >
+                                {{ formatDate(relatedPost.date) }}
+                            </time>
+                            <h3 class="related-card__title">
+                                <NuxtLink :to="relatedPost.path">
+                                    {{ relatedPost.title }}
+                                </NuxtLink>
+                            </h3>
+                            <p class="related-card__desc">
+                                {{ relatedPost.description }}
+                            </p>
+                            <div class="related-card__tags">
+                                <span
+                                    v-for="tag in relatedPost.tags?.slice(0, 2)"
+                                    :key="tag"
+                                    class="tag tag--ghost"
                                 >
-                                    <time :datetime="relatedPost.date">
-                                        {{ formatDate(relatedPost.date) }}
-                                    </time>
-                                </div>
-                                <h3
-                                    class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2"
-                                >
-                                    <NuxtLink
-                                        :to="relatedPost.path"
-                                        class="hover:text-cyan-600"
-                                    >
-                                        {{ relatedPost.title }}
-                                    </NuxtLink>
-                                </h3>
-                                <p
-                                    class="text-gray-600 text-sm line-clamp-2 mb-4"
-                                >
-                                    {{ relatedPost.description }}
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        v-for="tag in relatedPost.tags?.slice(
-                                            0,
-                                            2
-                                        )"
-                                        :key="tag"
-                                        class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600"
-                                    >
-                                        {{ tag }}
-                                    </span>
-                                </div>
+                                    {{ tag }}
+                                </span>
                             </div>
                         </article>
                     </div>
                 </aside>
-            </main>
+            </div>
+        </main>
 
-            <Footer />
-        </div>
+        <Footer />
     </div>
 </template>
 
@@ -442,24 +347,212 @@ useHead({
 </script>
 
 <style scoped>
-.line-clamp-2 {
+.article-crumbs {
+    border-bottom: 1px solid var(--rule);
+    padding-block: 1rem;
+}
+.crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--text-small);
+}
+.crumbs__link {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease);
+}
+.crumbs__link:hover {
+    color: var(--accent-deep);
+}
+.crumbs__sep {
+    color: var(--rule-strong);
+}
+.crumbs__current {
+    color: var(--ink);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 40ch;
+}
+
+/* Article header */
+.article-head {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.article-head__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+.article-title {
+    margin: 0;
+}
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    font-size: var(--text-small);
+    color: var(--muted);
+}
+.article-meta__dot {
+    color: var(--rule-strong);
+}
+.article-lede {
+    margin-top: 1.5rem;
+}
+.article-cover {
+    width: 100%;
+    margin-top: 2rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Table of contents */
+.toc {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.toc__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    margin-bottom: 1rem;
+}
+.toc__list,
+.toc__sub {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.toc__sub {
+    margin: 0.25rem 0 0.5rem 1rem;
+}
+.toc__link {
+    display: block;
+    padding: 0.3rem 0;
+    font-size: var(--text-small);
+    color: var(--accent-deep);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease);
+}
+.toc__link:hover {
+    color: var(--accent);
+}
+.toc__link--sub {
+    color: var(--muted);
+}
+.toc__link--sub:hover {
+    color: var(--accent-deep);
+}
+
+/* Article body: offset anchored headings under sticky header */
+.article-body :deep(h2),
+.article-body :deep(h3) {
+    scroll-margin-top: 6rem;
+}
+
+/* CTA */
+.article-footer {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.cta-panel {
+    background: var(--ink);
+    border-color: var(--ink);
+}
+.cta-panel__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.cta-panel__desc {
+    color: var(--night-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Related */
+.related {
+    margin-top: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--rule);
+}
+.related__title {
+    margin-bottom: 2rem;
+}
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.related-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    transition: border-color var(--dur) var(--ease),
+        transform var(--dur) var(--ease);
+}
+.related-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+.related-card__date {
+    font-size: var(--text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+.related-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+}
+.related-card__title a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color var(--dur) var(--ease);
+}
+.related-card:hover .related-card__title a {
+    color: var(--accent-deep);
+}
+.related-card__desc {
+    margin-top: 0.6rem;
+    font-size: var(--text-small);
+    color: var(--ink-soft);
+    line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
-/* Prose styles for better content display */
-.prose h2 {
-    scroll-margin-top: 6rem;
+.related-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
 }
 
-.prose h3 {
-    scroll-margin-top: 6rem;
-}
-
-/* Smooth scrolling for anchor links */
-html {
-    scroll-behavior: smooth;
+@media (max-width: 560px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

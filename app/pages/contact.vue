@@ -1,81 +1,85 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <Header />
+    <div>
+        <Header />
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold text-gray-900 mb-8">{{ $t('contact.title') }}</h1>
+        <section class="section">
+            <div class="wrap wrap--narrow">
+                <p class="eyebrow">{{ $t('home.navigation.contact') }}</p>
+                <h1 class="text-h1" style="margin-top: 1rem">
+                    {{ $t('contact.title') }}
+                </h1>
 
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-6">{{ $t('contact.form.title') }}</h2>
+                <div class="panel contact-panel">
+                    <h2 class="form-title">{{ $t('contact.form.title') }}</h2>
 
-          <form @submit.prevent="handleSubmit" class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-                {{ $t('contact.form.name') }}
-              </label>
-              <input
-                id="name"
-                v-model="form.name"
-                type="text"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-              />
+                    <form class="form-grid" @submit.prevent="handleSubmit">
+                        <div class="field">
+                            <label for="name" class="field__label">{{
+                                $t('contact.form.name')
+                            }}</label>
+                            <input
+                                id="name"
+                                v-model="form.name"
+                                type="text"
+                                required
+                                class="input"
+                            />
+                        </div>
+
+                        <div class="field">
+                            <label for="email" class="field__label">{{
+                                $t('contact.form.email')
+                            }}</label>
+                            <input
+                                id="email"
+                                v-model="form.email"
+                                type="email"
+                                required
+                                class="input"
+                            />
+                        </div>
+
+                        <div class="field field--full">
+                            <label for="subject" class="field__label">{{
+                                $t('contact.form.subject')
+                            }}</label>
+                            <input
+                                id="subject"
+                                v-model="form.subject"
+                                type="text"
+                                required
+                                class="input"
+                            />
+                        </div>
+
+                        <div class="field field--full">
+                            <label for="message" class="field__label">{{
+                                $t('contact.form.message')
+                            }}</label>
+                            <textarea
+                                id="message"
+                                v-model="form.message"
+                                rows="5"
+                                required
+                                class="textarea"
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn--primary btn--lg btn--block field--full"
+                        >
+                            <span class="btn__label">{{
+                                $t('contact.form.submit')
+                            }}</span>
+                        </button>
+                    </form>
+                </div>
             </div>
+        </section>
 
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                {{ $t('contact.form.email') }}
-              </label>
-              <input
-                id="email"
-                v-model="form.email"
-                type="email"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
-                {{ $t('contact.form.subject') }}
-              </label>
-              <input
-                id="subject"
-                v-model="form.subject"
-                type="text"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-              />
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-                {{ $t('contact.form.message') }}
-              </label>
-              <textarea
-                id="message"
-                v-model="form.message"
-                rows="5"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-lg transition-colors"
-            >
-              {{ $t('contact.form.submit') }}
-            </button>
-          </form>
-        </div>
-
-      </div>
-    </main>
-
-    <Footer />
-  </div>
+        <Footer />
+    </div>
 </template>
 
 <script setup>
@@ -107,3 +111,30 @@ useHead({
   ]
 })
 </script>
+
+<style scoped>
+.contact-panel {
+    margin-top: 2.25rem;
+}
+.form-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    margin-bottom: 1.75rem;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.field--full {
+    grid-column: 1 / -1;
+}
+.form-grid .btn {
+    margin-top: 0.5rem;
+}
+@media (max-width: 560px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

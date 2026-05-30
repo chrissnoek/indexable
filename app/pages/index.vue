@@ -1,171 +1,134 @@
 <template>
-    <div class="min-h-screen bg-slate-100">
-        <!-- Header -->
+    <div>
         <Header />
 
-        <!-- Hero Section -->
-        <section class="relative overflow-hidden">
-            <div
-                class="absolute inset-0 bg-gradient-to-r F3F3F3 opacity-90"
-            ></div>
-            <!-- <div
-                class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
-            ></div> -->
-            <div
-                class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center"
+        <!-- Hero -->
+        <section class="hero">
+            <span class="vlabel hero__vlabel" aria-hidden="true"
+                >Gerechtelijk register · Nederland</span
             >
-                <!-- <div class="mb-8">
-                    <span
-                        class="inline-block bg-black/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
-                    >
+            <div class="wrap hero__inner">
+                <div class="hero__lead">
+                    <p class="eyebrow stagger-child">
                         {{ $t('home.hero.trustedBy') }}
-                    </span>
-                </div> -->
-                <h2
-                    class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
-                >
-                    {{ $t('home.hero.title') }}
-                </h2>
-                <p
-                    class="text-xl md:text-2xl mb-12 text-gray-900/90 max-w-3xl mx-auto leading-relaxed"
-                >
-                    {{ $t('home.hero.description') }}
-                </p>
+                    </p>
+                    <h1 class="text-display hero__title stagger-child">
+                        {{ $t('home.hero.title') }}
+                    </h1>
+                    <p class="lede hero__desc stagger-child">
+                        {{ $t('home.hero.description') }}
+                    </p>
 
-                <!-- Search Bar -->
-                <div class="max-w-2xl mx-auto">
-                    <div
-                        class="flex flex-col md:flex-row gap-4 bg-white/10 backdrop-blur-sm p-2 rounded-2xl border border-white/20"
-                    >
-                        <div class="flex-1">
+                    <div class="hero__search stagger-child">
+                        <div class="search-hero">
                             <input
                                 v-model="searchQuery"
                                 type="text"
                                 :placeholder="$t('home.hero.searchPlaceholder')"
-                                class="w-full px-6 py-4 bg-white/90 text-gray-900 rounded-xl border-0 focus:ring-2 focus:ring-cyan-900 focus:bg-white transition-all placeholder-gray-500"
+                                class="search-hero__input"
+                                aria-label="Zoeken"
                                 @keyup.enter="performSearch"
                             />
+                            <Button
+                                :variant="ButtonVariant.Primary"
+                                :size="ButtonSize.LG"
+                                @click="performSearch"
+                            >
+                                {{ $t('home.hero.searchButton') }}
+                            </Button>
                         </div>
-                        <Button
-                            :variant="ButtonVariant.Primary"
-                            :size="ButtonSize.LG"
-                            @click="performSearch"
-                        >
-                            {{ $t('home.hero.searchButton') }}
-                        </Button>
                     </div>
                 </div>
 
-                <!-- Quick Stats -->
-                <div
-                    class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-                >
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-gray-900 mb-2">
-                            250+
+                <div class="hero__stats stagger-child">
+                    <div class="stat-row">
+                        <div class="stat">
+                            <div class="stat__num">250+</div>
+                            <div class="stat__label">
+                                {{ $t('home.stats.verifiedExperts') }}
+                            </div>
                         </div>
-                        <div class="text-gray-900/80 text-sm">
-                            {{ $t('home.stats.verifiedExperts') }}
+                        <div class="stat">
+                            <div class="stat__num">5k+</div>
+                            <div class="stat__label">
+                                {{ $t('home.stats.successfulCases') }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-gray-900 mb-2">
-                            5k+
+                        <div class="stat">
+                            <div class="stat__num">
+                                4.8<span class="stat__star">★</span>
+                            </div>
+                            <div class="stat__label">
+                                {{ $t('home.stats.averageRating') }}
+                            </div>
                         </div>
-                        <div class="text-gray-900/80 text-sm">
-                            {{ $t('home.stats.successfulCases') }}
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-gray-900 mb-2">
-                            4.8★
-                        </div>
-                        <div class="text-gray-900/80 text-sm">
-                            {{ $t('home.stats.averageRating') }}
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-gray-900 mb-2">
-                            15k+
-                        </div>
-                        <div class="text-gray-900/80 text-sm">
-                            {{ $t('home.stats.yearsExperience') }}
+                        <div class="stat">
+                            <div class="stat__num">15k+</div>
+                            <div class="stat__label">
+                                {{ $t('home.stats.yearsExperience') }}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Category Filters -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h3
-                        class="text-4xl font-bold bg-cyan-900 bg-clip-text text-transparent mb-4"
-                    >
-                        {{ $t('home.categories.title') }}
-                    </h3>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                        {{ $t('home.categories.subtitle') }}
-                    </p>
+        <!-- Categories -->
+        <section class="section section--paper-warm">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">{{ $t('home.categories.subtitle') }}</p>
+                    <h2 class="text-h1">{{ $t('home.categories.title') }}</h2>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-                    <div
-                        v-for="category in categories"
+                <hr class="rule" style="margin: 2.5rem 0" />
+                <div class="cat-grid">
+                    <button
+                        v-for="(category, i) in categories"
                         :key="category.id"
+                        class="cat-card stagger-child"
                         @click="filterByCategory(category.id)"
-                        class="group p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl hover:from-cyan-50 hover:to-cyan-50 border-2 border-gray-100 hover:border-cyan-200 transition-all duration-300 text-center hover transform hover:-translate-y-1 cursor-pointer"
                     >
-                        <div
-                            class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300"
+                        <span class="cat-card__index"
+                            >{{ (i + 1).toString().padStart(2, '0') }} —</span
                         >
-                            {{ category.icon }}
-                        </div>
-                        <div
-                            class="font-bold text-gray-900 group-hover:text-cyan-600 transition-colors"
+                        <span class="cat-card__name">{{ category.name }}</span>
+                        <span class="cat-card__hint">{{
+                            $t('home.categories.viewAll')
+                        }}</span>
+                        <span class="cat-card__go more-link"
+                            >{{ $t('home.featured.viewProfile') }}
+                            <span class="caret">→</span></span
                         >
-                            {{ category.name }}
-                        </div>
-                        <div
-                            class="text-sm text-gray-500 mt-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                        >
-                            {{ $t('home.categories.viewAll') }}
-                        </div>
-                    </div>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Companies -->
-        <section class="py-20 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h3
-                        class="text-4xl font-bold bg-cyan-900 bg-clip-text text-transparent mb-4"
-                    >
-                        {{ $t('home.featured.title') }}
-                    </h3>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                        {{ $t('home.featured.subtitle') }}
-                    </p>
+        <!-- Featured experts -->
+        <section class="section">
+            <div class="wrap">
+                <div class="section-head">
+                    <p class="eyebrow">{{ $t('home.featured.subtitle') }}</p>
+                    <h2 class="text-h1">{{ $t('home.featured.title') }}</h2>
                 </div>
-                <div v-if="loading" class="text-center py-16">
-                    <div
-                        class="animate-spin rounded-full h-16 w-16 border-4 border-cyan-200 border-t-cyan-500 mx-auto"
-                    ></div>
-                    <p class="text-gray-600 mt-4">
+                <hr class="rule" style="margin: 2.5rem 0" />
+
+                <div v-if="loading" class="state-block">
+                    <div class="spinner"></div>
+                    <p class="muted" style="margin-top: 1rem">
                         {{ $t('home.featured.loading') }}
                     </p>
                 </div>
+
                 <div
                     v-else-if="featuredCompanies.length === 0"
-                    class="text-center py-16 bg-white/50 rounded-2xl p-12"
+                    class="panel empty-state"
                 >
-                    <div class="text-6xl mb-4">🏠</div>
-                    <h4 class="text-2xl font-bold text-gray-900 mb-4">
+                    <p class="eyebrow eyebrow--muted">Directory</p>
+                    <h3 class="text-h2" style="margin-top: 0.5rem">
                         {{ $t('home.featured.noExperts') }}
-                    </h4>
-                    <p class="text-gray-600 mb-6">
+                    </h3>
+                    <p class="lede" style="margin: 1rem auto 1.75rem; max-width: 48ch">
                         {{ $t('home.featured.noExpertsDescription') }}
                     </p>
                     <Button
@@ -176,66 +139,56 @@
                         {{ $t('home.cta.button') }}
                     </Button>
                 </div>
-                <div
-                    v-else
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    <div
-                        v-for="company in featuredCompanies"
+
+                <div v-else class="featured-grid">
+                    <article
+                        v-for="(company, index) in featuredCompanies"
                         :key="company.id"
-                        class="group bg-white rounded-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-cyan-200 transform hover:-translate-y-2"
+                        class="expert-card stagger-child"
+                        :class="{ 'expert-card--featured': index === 0 }"
                     >
-                        <div class="flex items-start justify-between mb-6">
-                            <div class="flex-1">
-                                <h4
-                                    class="text-xl font-bold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors"
-                                >
-                                    {{ company.name }}
-                                </h4>
-                                <p
-                                    class="text-sm text-gray-600 flex items-center"
-                                >
-                                    <span class="mr-2">📍</span>
-                                    {{ company.city }}, {{ company.country }}
-                                </p>
-                            </div>
-                            <div
-                                class="flex items-center bg-yellow-50 px-3 py-1 rounded-full"
+                        <div class="expert-card__top">
+                            <p class="tag expert-card__cat">{{ company.type }}</p>
+                            <span class="rating"
+                                ><span class="rating__star">★</span
+                                >{{ company.rating }}</span
                             >
-                                <span class="text-yellow-500 text-lg">⭐</span>
-                                <span
-                                    class="text-sm font-bold text-gray-900 ml-1"
-                                    >{{ company.rating }}</span
-                                >
-                            </div>
                         </div>
-                        <p
-                            class="text-gray-700 mb-6 line-clamp-3 leading-relaxed"
-                        >
-                            {{ company.description }}
-                        </p>
-                        <div
-                            class="flex items-center justify-between pt-4 border-t border-gray-100"
-                        >
-                            <span
-                                class="inline-block bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm font-medium capitalize"
+                        <h3 class="expert-card__title">{{ company.name }}</h3>
+                        <p class="expert-card__place">
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
                             >
-                                {{ company.type }}
-                            </span>
+                                <path
+                                    d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"
+                                />
+                                <circle cx="12" cy="10" r="2.5" />
+                            </svg>
+                            {{ company.city }}, {{ company.country }}
+                        </p>
+                        <p class="expert-card__desc">{{ company.description }}</p>
+                        <div class="expert-card__meta">
+                            <span class="metarow"
+                                ><span>{{ company.reviewCount }} reviews</span></span
+                            >
                             <NuxtLink
                                 :to="`/expert/${company.id}`"
-                                class="text-cyan-600 hover:text-cyan-700 font-semibold flex items-center group-hover:translate-x-1 transition-transform"
+                                class="more-link"
                             >
                                 {{ $t('home.featured.viewProfile') }}
-                                <span class="ml-1">→</span>
+                                <span class="caret">→</span>
                             </NuxtLink>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
         <Footer />
     </div>
 </template>
@@ -290,128 +243,92 @@ const filterByCategory = (categoryId: string) => {
 </script>
 
 <style scoped>
-@reference "tailwindcss";
-
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Custom animations and effects */
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Smooth scrolling for the entire page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Custom gradient text effect */
-.gradient-text {
-    background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Enhanced button hover effects */
-.btn-primary {
+.hero {
     position: relative;
     overflow: hidden;
+    padding-block: clamp(3.5rem, 2rem + 7vw, 8rem);
+    border-bottom: 1px solid var(--rule);
 }
-
-.btn-primary::before {
-    content: '';
+.hero__vlabel {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
-    transition: left 0.5s;
+    top: clamp(2rem, 4vw, 4rem);
+    right: clamp(0.5rem, 2vw, 1.5rem);
+}
+.hero__inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: end;
+}
+.hero__lead {
+    grid-column: 1 / span 8;
+}
+.hero__title {
+    margin-top: 1.25rem;
+}
+.hero__desc {
+    margin-top: 1.5rem;
+    max-width: 54ch;
+}
+.hero__search {
+    margin-top: 2.5rem;
+    max-width: 620px;
+}
+.hero__stats {
+    grid-column: 1 / -1;
+    margin-top: clamp(2.5rem, 4vw, 4rem);
+}
+.stat__star {
+    color: var(--accent);
+    font-size: 0.7em;
+    margin-left: 0.05em;
 }
 
-.btn-primary:hover::before {
-    left: 100%;
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
 }
 
-/* Card hover effects */
-.card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.featured-grid > .expert-card--featured {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
-.card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.state-block {
+    text-align: center;
+    padding-block: clamp(3rem, 6vw, 5rem);
+}
+.empty-state {
+    text-align: center;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* Loading animation improvements */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+@media (max-width: 1024px) {
+    .cat-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-    to {
-        transform: rotate(360deg);
+    .hero__lead {
+        grid-column: 1 / -1;
     }
 }
-
-.animate-spin {
-    animation: spin 1s linear infinite;
-}
-
-/* Responsive typography improvements */
-@media (max-width: 640px) {
-    .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.2;
+@media (max-width: 760px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
     }
-
-    .hero-subtitle {
-        font-size: 1.125rem;
-        line-height: 1.6;
+    .featured-grid > .expert-card--featured {
+        grid-column: span 1;
+        grid-row: span 1;
     }
 }
-
-/* Focus states for accessibility */
-button:focus,
-input:focus,
-a:focus {
-    @apply outline-2 outline-cyan-900 outline-offset-2;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #ec4899, #8b5cf6);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #db2777, #7c3aed);
+@media (max-width: 560px) {
+    .cat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 </style>

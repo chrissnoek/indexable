@@ -1,181 +1,165 @@
 <template>
-    <div class="min-h-screen bg-gray-50">
-        <!-- Header -->
-    <Header />
+    <div>
+        <Header />
 
         <!-- Search and Filters -->
-        <section class="bg-white py-8 border-b">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row gap-6">
-                    <!-- Search Bar -->
-                    <div class="flex-1">
-                        <div class="relative">
-                            <input
-                                v-model="searchQuery"
-                                type="text"
-                                :placeholder="$t('search.searchPlaceholder')"
-                                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                                @input="debouncedSearch"
-                            />
-                            <div
-                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-                            >
-                                <svg
-                                    class="h-5 w-5 text-gray-400"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                    ></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Filters -->
-                    <div class="flex flex-wrap gap-4">
-                        <!-- Location Filter -->
-                        <select
-                            v-model="filters.location"
-                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            @change="applyFilters"
+        <section class="filterbar">
+            <div class="wrap">
+                <div class="searchline">
+                    <input
+                        v-model="searchQuery"
+                        type="text"
+                        :placeholder="$t('search.searchPlaceholder')"
+                        class="searchline__input"
+                        aria-label="Zoeken"
+                        @input="debouncedSearch"
+                    />
+                    <span class="searchline__icon" aria-hidden="true">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
                         >
-                            <option value="">
-                                {{ $t('search.filters.location.all') }}
-                            </option>
-                            <option value="groningen">
-                                {{ $t('search.filters.location.groningen') }}
-                            </option>
-                            <option value="friesland">
-                                {{ $t('search.filters.location.friesland') }}
-                            </option>
-                            <option value="utrecht">
-                                {{ $t('search.filters.location.utrecht') }}
-                            </option>
-                            <option value="noord-holland">
-                                {{ $t('search.filters.location.noordHolland') }}
-                            </option>
-                            <option value="zuid-holland">
-                                {{ $t('search.filters.location.zuidHolland') }}
-                            </option>
-                        </select>
+                            <circle cx="11" cy="11" r="7" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+                    </span>
+                </div>
 
-                        <!-- Type Filter -->
-                        <select
-                            v-model="filters.type"
-                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            @change="applyFilters"
-                        >
-                            <option value="">
-                                {{ $t('search.filters.expertise.all') }}
-                            </option>
-                            <option value="medical">
-                                {{ $t('search.filters.expertise.medical') }}
-                            </option>
-                            <option value="construction">
-                                {{ $t('search.filters.expertise.construction') }}
-                            </option>
-                            <option value="financial">
-                                {{ $t('search.filters.expertise.financial') }}
-                            </option>
-                            <option value="forensic">
-                                {{ $t('search.filters.expertise.forensic') }}
-                            </option>
-                            <option value="it">
-                                {{ $t('search.filters.expertise.it') }}
-                            </option>
-                        </select>
+                <div class="filter-row">
+                    <select
+                        v-model="filters.location"
+                        class="select"
+                        @change="applyFilters"
+                    >
+                        <option value="">
+                            {{ $t('search.filters.location.all') }}
+                        </option>
+                        <option value="groningen">
+                            {{ $t('search.filters.location.groningen') }}
+                        </option>
+                        <option value="friesland">
+                            {{ $t('search.filters.location.friesland') }}
+                        </option>
+                        <option value="utrecht">
+                            {{ $t('search.filters.location.utrecht') }}
+                        </option>
+                        <option value="noord-holland">
+                            {{ $t('search.filters.location.noordHolland') }}
+                        </option>
+                        <option value="zuid-holland">
+                            {{ $t('search.filters.location.zuidHolland') }}
+                        </option>
+                    </select>
 
-                        <!-- Court Experience Filter -->
-                        <select
-                            v-model="filters.courtExperience"
-                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            @change="applyFilters"
-                        >
-                            <option value="">
-                                {{ $t('search.filters.courtExperience.all') }}
-                            </option>
-                            <option value="extensive">
-                                {{ $t('search.filters.courtExperience.extensive') }}
-                            </option>
-                            <option value="moderate">
-                                {{ $t('search.filters.courtExperience.moderate') }}
-                            </option>
-                            <option value="limited">
-                                {{ $t('search.filters.courtExperience.limited') }}
-                            </option>
-                            <option value="none">
-                                {{ $t('search.filters.courtExperience.none') }}
-                            </option>
-                        </select>
+                    <select
+                        v-model="filters.type"
+                        class="select"
+                        @change="applyFilters"
+                    >
+                        <option value="">
+                            {{ $t('search.filters.expertise.all') }}
+                        </option>
+                        <option value="medical">
+                            {{ $t('search.filters.expertise.medical') }}
+                        </option>
+                        <option value="construction">
+                            {{ $t('search.filters.expertise.construction') }}
+                        </option>
+                        <option value="financial">
+                            {{ $t('search.filters.expertise.financial') }}
+                        </option>
+                        <option value="forensic">
+                            {{ $t('search.filters.expertise.forensic') }}
+                        </option>
+                        <option value="it">
+                            {{ $t('search.filters.expertise.it') }}
+                        </option>
+                    </select>
 
-                        <!-- Rate Filter -->
-                        <select
-                            v-model="filters.rate"
-                            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            @change="applyFilters"
-                        >
-                            <option value="">
-                                {{ $t('search.filters.rate.all') }}
-                            </option>
-                            <option value="budget">
-                                {{ $t('search.filters.rate.budget') }}
-                            </option>
-                            <option value="standard">
-                                {{ $t('search.filters.rate.standard') }}
-                            </option>
-                            <option value="premium">
-                                {{ $t('search.filters.rate.premium') }}
-                            </option>
-                            <option value="specialist">
-                                {{ $t('search.filters.rate.specialist') }}
-                            </option>
-                        </select>
-                    </div>
+                    <select
+                        v-model="filters.courtExperience"
+                        class="select"
+                        @change="applyFilters"
+                    >
+                        <option value="">
+                            {{ $t('search.filters.courtExperience.all') }}
+                        </option>
+                        <option value="extensive">
+                            {{ $t('search.filters.courtExperience.extensive') }}
+                        </option>
+                        <option value="moderate">
+                            {{ $t('search.filters.courtExperience.moderate') }}
+                        </option>
+                        <option value="limited">
+                            {{ $t('search.filters.courtExperience.limited') }}
+                        </option>
+                        <option value="none">
+                            {{ $t('search.filters.courtExperience.none') }}
+                        </option>
+                    </select>
+
+                    <select
+                        v-model="filters.rate"
+                        class="select"
+                        @change="applyFilters"
+                    >
+                        <option value="">
+                            {{ $t('search.filters.rate.all') }}
+                        </option>
+                        <option value="budget">
+                            {{ $t('search.filters.rate.budget') }}
+                        </option>
+                        <option value="standard">
+                            {{ $t('search.filters.rate.standard') }}
+                        </option>
+                        <option value="premium">
+                            {{ $t('search.filters.rate.premium') }}
+                        </option>
+                        <option value="specialist">
+                            {{ $t('search.filters.rate.specialist') }}
+                        </option>
+                    </select>
                 </div>
 
                 <!-- Active Filters -->
-                <div v-if="hasActiveFilters" class="flex flex-wrap gap-2 mt-4">
-                    <span class="text-sm text-gray-600">{{
+                <div v-if="hasActiveFilters" class="active-filters">
+                    <span class="active-filters__label">{{
                         $t('search.filters.activeFilters')
                     }}</span>
                     <button
                         v-if="filters.location"
+                        class="chip"
                         @click="clearFilter('location')"
-                        class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200"
                     >
-                        {{ filters.location }} ×
+                        {{ filters.location }} <span class="chip__x">×</span>
                     </button>
                     <button
                         v-if="filters.type"
+                        class="chip"
                         @click="clearFilter('type')"
-                        class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200"
                     >
-                        {{ filters.type }} ×
+                        {{ filters.type }} <span class="chip__x">×</span>
                     </button>
                     <button
                         v-if="filters.courtExperience"
+                        class="chip"
                         @click="clearFilter('courtExperience')"
-                        class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200"
                     >
-                        {{ filters.courtExperience }} ×
+                        {{ filters.courtExperience }}
+                        <span class="chip__x">×</span>
                     </button>
                     <button
                         v-if="filters.rate"
+                        class="chip"
                         @click="clearFilter('rate')"
-                        class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200"
                     >
-                        {{ filters.rate }} ×
+                        {{ filters.rate }} <span class="chip__x">×</span>
                     </button>
-                    <button
-                        @click="clearAllFilters"
-                        class="text-sm text-gray-600 hover:text-gray-800 underline"
-                    >
+                    <button class="active-filters__clear" @click="clearAllFilters">
                         {{ $t('search.filters.clearAll') }}
                     </button>
                 </div>
@@ -183,198 +167,146 @@
         </section>
 
         <!-- Results -->
-        <section class="py-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Results Header -->
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-2xl font-bold text-gray-900">
+        <section class="section section--tight">
+            <div class="wrap">
+                <div class="results-head">
+                    <h1 class="results-head__count">
                         {{
                             loading
                                 ? $t('search.results.searching')
-                                : $t('search.resultsCount', { count: filteredCompanies.length })
+                                : $t('search.resultsCount', {
+                                      count: filteredCompanies.length,
+                                  })
                         }}
-                    </h2>
-                    <div class="flex items-center gap-4">
-                        <span class="text-sm text-gray-600">{{
+                    </h1>
+                    <div class="results-head__view">
+                        <span class="results-head__label">{{
                             $t('search.view.label')
                         }}</span>
-                        <button
-                            @click="viewMode = 'grid'"
-                            :class="[
-                                'px-3 py-2 rounded-lg text-sm font-medium',
-                                viewMode === 'grid'
-                                    ? 'bg-cyan-600 text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
-                            ]"
-                        >
-                            {{ $t('search.view.grid') }}
-                        </button>
-                        <button
-                            @click="viewMode = 'list'"
-                            :class="[
-                                'px-3 py-2 rounded-lg text-sm font-medium',
-                                viewMode === 'list'
-                                    ? 'bg-cyan-600 text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
-                            ]"
-                        >
-                            {{ $t('search.view.list') }}
-                        </button>
+                        <div class="segment">
+                            <button
+                                class="segment__btn"
+                                :class="{ 'is-active': viewMode === 'grid' }"
+                                @click="viewMode = 'grid'"
+                            >
+                                {{ $t('search.view.grid') }}
+                            </button>
+                            <button
+                                class="segment__btn"
+                                :class="{ 'is-active': viewMode === 'list' }"
+                                @click="viewMode = 'list'"
+                            >
+                                {{ $t('search.view.list') }}
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Loading State -->
-                <div v-if="loading" class="flex justify-center py-12">
-                    <div
-                        class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"
-                    ></div>
+                <hr class="rule" style="margin-bottom: 2.5rem" />
+
+                <!-- Loading -->
+                <div v-if="loading" class="state-block">
+                    <div class="spinner"></div>
                 </div>
 
                 <!-- No Results -->
                 <div
                     v-else-if="filteredCompanies.length === 0"
-                    class="text-center py-12"
+                    class="panel no-results"
                 >
-                    <div class="text-gray-400 mb-4">
-                        <svg
-                            class="mx-auto h-12 w-12"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.467-.881-6.08-2.33"
-                            ></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">
+                    <p class="eyebrow eyebrow--muted">0 resultaten</p>
+                    <h2 class="text-h2" style="margin-top: 0.5rem">
                         {{ $t('search.results.noResults') }}
-                    </h3>
-                    <p class="text-gray-600 mb-4">
+                    </h2>
+                    <p class="lede" style="margin: 1rem auto 1.75rem; max-width: 46ch">
                         {{ $t('search.results.noResultsDescription') }}
                     </p>
-                    <button
-                        @click="clearAllFilters"
-                        class="bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-700"
-                    >
-                        {{ $t('search.results.clearFilters') }}
+                    <button class="btn btn--ghost" @click="clearAllFilters">
+                        <span class="btn__label">{{
+                            $t('search.results.clearFilters')
+                        }}</span>
                     </button>
                 </div>
 
                 <!-- Results Grid -->
-                <div
-                    v-else-if="viewMode === 'grid'"
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                    <div
+                <div v-else-if="viewMode === 'grid'" class="result-grid">
+                    <article
                         v-for="company in filteredCompanies"
                         :key="company.id"
-                        class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6"
+                        class="expert-card stagger-child"
                     >
-                        <div class="flex items-start justify-between mb-4">
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">
-                                    {{ company.name }}
-                                </h3>
-                                <p class="text-sm text-gray-600">
-                                    {{ company.city }}, {{ company.country }}
-                                </p>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="text-yellow-400">★</span>
-                                <span class="text-sm text-gray-600 ml-1">{{
-                                    company.rating
-                                }}</span>
-                            </div>
+                        <div class="expert-card__top">
+                            <p class="tag expert-card__cat">{{ company.type }}</p>
+                            <span class="rating"
+                                ><span class="rating__star">★</span
+                                >{{ company.rating }}</span
+                            >
                         </div>
-                        <p class="text-gray-700 mb-4 line-clamp-3">
-                            {{ company.description }}
+                        <h2 class="expert-card__title">{{ company.name }}</h2>
+                        <p class="expert-card__place">
+                            {{ company.city }}, {{ company.country }}
                         </p>
-                        <div class="flex items-center justify-between text-sm">
-                            <span class="text-cyan-600 capitalize">{{
-                                company.type
-                            }}</span>
-                            <span class="text-gray-600">{{
-                                company.ageGroup
-                            }}</span>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-gray-200">
+                        <p class="expert-card__desc">{{ company.description }}</p>
+                        <div class="expert-card__meta">
+                            <span class="metarow"
+                                ><span>{{ company.ageGroup }}</span></span
+                            >
                             <NuxtLink
                                 :to="`/expert/${company.id}`"
-                                class="text-cyan-600 hover:text-cyan-700 font-medium"
+                                class="more-link"
                             >
-                                {{ $t('search.results.viewProfile') }} →
+                                {{ $t('search.results.viewProfile') }}
+                                <span class="caret">→</span>
                             </NuxtLink>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
                 <!-- Results List -->
-                <div v-else class="space-y-4">
-                    <div
+                <div v-else class="result-list">
+                    <article
                         v-for="company in filteredCompanies"
                         :key="company.id"
-                        class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6"
+                        class="expert-card expert-card--row stagger-child"
                     >
-                        <div
-                            class="flex flex-col md:flex-row md:items-center justify-between"
-                        >
-                            <div class="flex-1">
-                                <div
-                                    class="flex items-start justify-between mb-2"
+                        <div class="expert-card__body">
+                            <div class="expert-card__top">
+                                <p class="tag expert-card__cat">
+                                    {{ company.type }}
+                                </p>
+                                <span class="rating"
+                                    ><span class="rating__star">★</span
+                                    >{{ company.rating }}
+                                    <span class="rating__count"
+                                        >({{ company.reviewCount }})</span
+                                    ></span
                                 >
-                                    <h3
-                                        class="text-xl font-semibold text-gray-900"
-                                    >
-                                        {{ company.name }}
-                                    </h3>
-                                    <div class="flex items-center ml-4">
-                                        <span class="text-yellow-400">★</span>
-                                        <span
-                                            class="text-sm text-gray-600 ml-1"
-                                            >{{ company.rating }}</span
-                                        >
-                                        <span class="text-sm text-gray-500 ml-2"
-                                            >({{
-                                                company.reviewCount
-                                            }}
-                                            reviews)</span
-                                        >
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 mb-2">
-                                    {{ company.city }}, {{ company.country }}
-                                </p>
-                                <p class="text-gray-700 mb-4">
-                                    {{ company.description }}
-                                </p>
-                                <div class="flex items-center gap-4 text-sm">
-                                    <span
-                                        class="bg-blue-100 text-blue-800 px-2 py-1 rounded"
-                                        >{{ company.type }}</span
-                                    >
-                                    <span
-                                        class="bg-green-100 text-green-800 px-2 py-1 rounded"
-                                        >{{ company.ageGroup }}</span
-                                    >
-                                    <span class="text-gray-600">{{
-                                        company.phone
-                                    }}</span>
-                                </div>
                             </div>
-                            <div class="mt-4 md:mt-0 md:ml-6">
-                                <NuxtLink
-                                    :to="`/expert/${company.id}`"
-                                    class="bg-cyan-600 text-white px-6 py-2 rounded-lg hover:bg-cyan-700 inline-block"
-                                >
-                                    {{ $t('search.results.viewProfile') }}
-                                </NuxtLink>
+                            <h2 class="expert-card__title">
+                                {{ company.name }}
+                            </h2>
+                            <p class="expert-card__place">
+                                {{ company.city }}, {{ company.country }}
+                            </p>
+                            <p class="expert-card__desc">
+                                {{ company.description }}
+                            </p>
+                            <div class="metarow" style="margin-top: 1rem">
+                                <span>{{ company.ageGroup }}</span>
+                                <span>{{ company.phone }}</span>
                             </div>
                         </div>
-                    </div>
+                        <div class="expert-card__aside">
+                            <NuxtLink
+                                :to="`/expert/${company.id}`"
+                                class="btn btn--ghost btn--sm"
+                            >
+                                <span class="btn__label">{{
+                                    $t('search.results.viewProfile')
+                                }}</span>
+                            </NuxtLink>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -525,10 +457,144 @@ const hasActiveFilters = computed(() => {
 </script>
 
 <style scoped>
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+/* ---- Filter bar ------------------------------------------------- */
+.filterbar {
+    padding-block: clamp(1.75rem, 1rem + 3vw, 2.75rem);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+}
+.filterbar .wrap > * + * {
+    margin-top: 1.4rem;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+.active-filters__label {
+    font-size: var(--text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-right: 0.15rem;
+}
+.active-filters__clear {
+    margin-left: 0.4rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--accent-deep);
+    font-size: var(--text-small);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--dur) var(--ease);
+}
+.active-filters__clear:hover {
+    color: var(--accent);
+}
+
+/* ---- Results header --------------------------------------------- */
+.results-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.results-head__count {
+    margin: 0;
+    font-size: var(--text-h2);
+    letter-spacing: -0.01em;
+}
+.results-head__view {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.results-head__label {
+    font-size: var(--text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+}
+
+/* ---- States ------------------------------------------------------ */
+.state-block {
+    text-align: center;
+    padding-block: clamp(3rem, 6vw, 5rem);
+}
+.no-results {
+    text-align: center;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ---- Result layouts --------------------------------------------- */
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.result-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* row variant of the shared expert-card */
+.expert-card--row {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2rem;
+}
+.expert-card__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.expert-card__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-left: 2rem;
+    border-left: 1px solid var(--rule);
+}
+
+/* ---- Responsive -------------------------------------------------- */
+@media (max-width: 1024px) {
+    .filter-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .result-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 640px) {
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+    .expert-card--row {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .expert-card__aside {
+        align-items: stretch;
+        padding-left: 0;
+        border-left: 0;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--rule);
+    }
 }
 </style>

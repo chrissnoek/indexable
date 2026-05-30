@@ -6,6 +6,23 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
 
+    app: {
+        pageTransition: { name: 'editorial', mode: 'out-in' },
+        head: {
+            link: [
+                {
+                    rel: 'preconnect',
+                    href: 'https://fonts.bunny.net',
+                    crossorigin: '',
+                },
+                {
+                    rel: 'stylesheet',
+                    href: 'https://fonts.bunny.net/css?family=instrument-sans:400,400i,500,500i,600,700|playfair-display:400,400i,500,600,700,700i,800,900&display=swap',
+                },
+            ],
+        },
+    },
+
     nitro: {
         prerender: {
             failOnError: false,
